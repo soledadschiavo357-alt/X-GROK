@@ -20,6 +20,43 @@
     tailwind.config = { theme: { extend: { colors: { gold: '#D4AF37' } } } };
   </script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050505'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='42' fill='%23D4AF37'%3EG%3C/text%3E%3C/svg%3E">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://x-grok.top/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "教程",
+        "item": "https://x-grok.top/blog/index.html"
+      }]
+    }
+  </snav aria-label="Breadcrumb" class="mb-6">
+      <ol class="flex items-center space-x-2 text-sm text-slate-400">
+        <li>
+          <a href="/" class="hover:text-gold transition-colors flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            首页
+          </a>
+        </li>
+        <li>
+          <svg class="w-4 h-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </li>
+        <li>
+          <span class="text-white font-medium" aria-current="page">教程</span>
+        </li>
+      </ol>
+    </nav>
+    <cript>
 </head>
 <body class="bg-black text-slate-100 antialiased font-sans">
   <header class="sticky top-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/5">

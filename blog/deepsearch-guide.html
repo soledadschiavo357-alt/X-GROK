@@ -124,7 +124,34 @@
   <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
     <main class="lg:col-span-2">
       <article class="prose prose-invert max-w-none">
-        <a href="/#blog" class="inline-flex items-center text-sm text-gold mb-6 hover:underline">← 返回教程列表</a>
+                <nav aria-label="Breadcrumb" class="mb-6">
+          <ol class="flex items-center space-x-2 text-sm text-slate-400">
+            <li>
+              <a href="/" class="hover:text-gold transition-colors flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                首页
+              </a>
+            </li>
+            <li>
+              <svg class="w-4 h-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </li>
+            <li>
+              <a href="/blog/index.html" class="hover:text-gold transition-colors">教程</a>
+            </li>
+            <li>
+              <svg class="w-4 h-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </li>
+            <li>
+              <span class="text-white font-medium truncate max-w-[150px] md:max-w-xs" aria-current="page">DeepSearch 指南</span>
+            </li>
+          </ol>
+        </nav>
         <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-6 leading-tight">DeepSearch 深度搜索指南：从入门到精通</h1>
         <div class="flex items-center gap-4 mb-8 text-sm text-slate-400 border-b border-white/10 pb-6">
           <div class="flex items-center gap-2">
