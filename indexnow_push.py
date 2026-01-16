@@ -6,7 +6,7 @@ import json
 # 配置信息
 SITE_HOST = "x-grok.top"
 SITE_URL = f"https://{SITE_HOST}"
-API_KEY = "3662fe1b8efb4b63a703c0edb1dac202"
+API_KEY = "d18753b123184422bd671c0d6263beff"
 KEY_LOCATION = f"{SITE_URL}/{API_KEY}.txt"
 API_URL = "https://api.indexnow.org/indexnow"
 SITEMAP_URL = f"{SITE_URL}/sitemap.xml"
@@ -76,11 +76,18 @@ def push_to_indexnow(urls):
         print(f"状态码: {response.status_code}")
         
         if response.status_code == 200:
-            print("推送成功！IndexNow 已接收 URL 列表。")
+            print("✅ 推送成功！IndexNow 已接收 URL 列表。")
         elif response.status_code == 202:
-            print("推送成功！请求已被接受但尚未处理。")
+            print("✅ 推送成功！请求已被接受但尚未处理。")
+        elif response.status_code == 403:
+            print(f"❌ 推送失败 (403 Forbidden): {response.json().get('message', response.text)}")
+            print("\n⚠️  可能的原因与解决方案:")
+            print(f"1. 验证文件无法访问: 请确保 {KEY_LOCATION} 可以被公网访问。")
+            print("2. CDN/防火墙拦截 (最常见):")
+            print("   - 您的网站使用了 Cloudflare。IndexNow 的验证爬虫可能被 'Bot Fight Mode' 或 WAF 拦截。")
+            print(f"   - 建议: 在 Cloudflare WAF 中添加一条规则，'URI Path' 包含 '{API_KEY}.txt' 时，操作选 'Skip' (跳过所有防护) 或 'Allow'。")
         else:
-            print(f"推送失败: {response.text}")
+            print(f"❌ 推送失败: {response.status_code} - {response.text}")
             
         print("-" * 30)
         
