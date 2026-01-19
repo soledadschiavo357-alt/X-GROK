@@ -341,13 +341,36 @@ def build_blog_index(posts):
     ''').strip()
     full_html = full_html.replace("{{ head_meta }}", head_meta)
     
-    schema = {
+    item_list_elements = []
+    for i, post in enumerate(posts, 1):
+        item_list_elements.append({
+            "@type": "ListItem",
+            "position": i,
+            "url": SITE_URL + post['url'],
+            "name": post['title']
+        })
+
+    collection_schema = {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Grok 教程导航",
-      "url": page_url
+      "url": page_url,
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": item_list_elements
+      }
     }
-    schema_json = json.dumps(schema, ensure_ascii=False, indent=2)
+    
+    breadcrumb_schema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": SITE_URL + "/" },
+        { "@type": "ListItem", "position": 2, "name": "教程导航", "item": page_url }
+      ]
+    }
+    
+    schema_json = json.dumps([collection_schema, breadcrumb_schema], ensure_ascii=False, indent=2)
     full_html = full_html.replace("{{ schema }}", f'<script type="application/ld+json">\n{schema_json}\n</script>')
     
     # Path Fixes for /blog/index.html (one level deep)
