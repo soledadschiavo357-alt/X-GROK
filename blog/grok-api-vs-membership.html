@@ -1,36 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="distribution" content="global">
-  <meta name="baidu-site-verification" content="codeva-KQlVH1DEtT" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Grok会员 vs Grok API：普通用户与开发者该如何选择？ | X-Grok.Top</title>
-  <meta name="description" content="深度解析 Grok 会员服务与 Grok API 的核心区别。从定位、功能权限、使用场景及成本效益四个维度对比，助您做出最适合的选择。">
-  <link rel="canonical" href="https://x-grok.top/blog/grok-api-vs-membership">
-  
-  <meta name="keywords" content="Grok会员 vs Grok API：普通用户与开发者该如何选择？, Grok教程, Grok会员, X-Grok">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#000000">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Grok会员 vs Grok API：普通用户与开发者该如何选择？">
-<meta property="og:description" content="深度解析 Grok 会员服务与 Grok API 的核心区别。从定位、功能权限、使用场景及成本效益四个维度对比，助您做出最适合的选择。">
-<meta property="og:url" content="https://x-grok.top/blog/grok-api-vs-membership">
-<meta property="og:image" content="https://x-grok.top/assets/og-cover.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Grok会员 vs Grok API：普通用户与开发者该如何选择？">
-<meta name="twitter:description" content="深度解析 Grok 会员服务与 Grok API 的核心区别。从定位、功能权限、使用场景及成本效益四个维度对比，助您做出最适合的选择。">
-<meta name="twitter:image" content="https://x-grok.top/assets/og-cover.png">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="global" name="distribution"/>
+  <meta content="codeva-KQlVH1DEtT" name="baidu-site-verification">
+   <meta content="width=device-width, initial-scale=1" name="viewport"/>
+   <title>
+    Grok会员 vs Grok API：普通用户与开发者该如何选择？ | X-Grok.Top
+   </title>
+   <meta content="深度解析 Grok 会员服务与 Grok API 的核心区别。从定位、功能权限、使用场景及成本效益四个维度对比，助您做出最适合的选择。" name="description"/>
+   <link href="https://x-grok.top/blog/grok-api-vs-membership" rel="canonical"/>
+   <link href="/assets/favicon.ico" rel="icon" sizes="any"/>
+   <link href="/assets/logo.png" rel="apple-touch-icon"/>
+   <link href="/assets/logo.png" rel="icon" sizes="192x192" type="image/png"/>
+   <meta content="Grok会员 vs Grok API：普通用户与开发者该如何选择？, Grok教程, Grok会员, X-Grok" name="keywords"/>
+   <meta content="index, follow" name="robots"/>
+   <meta content="#000000" name="theme-color"/>
+   <meta content="article" property="og:type"/>
+   <meta content="Grok会员 vs Grok API：普通用户与开发者该如何选择？" property="og:title"/>
+   <meta content="深度解析 Grok 会员服务与 Grok API 的核心区别。从定位、功能权限、使用场景及成本效益四个维度对比，助您做出最适合的选择。" property="og:description"/>
+   <meta content="https://x-grok.top/blog/grok-api-vs-membership" property="og:url"/>
+   <meta content="https://x-grok.top/assets/og-cover.png" property="og:image"/>
+   <meta content="summary_large_image" name="twitter:card"/>
+   <meta content="Grok会员 vs Grok API：普通用户与开发者该如何选择？" name="twitter:title"/>
+   <meta content="深度解析 Grok 会员服务与 Grok API 的核心区别。从定位、功能权限、使用场景及成本效益四个维度对比，助您做出最适合的选择。" name="twitter:description"/>
+   <meta content="https://x-grok.top/assets/og-cover.png" name="twitter:image"/>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+   <script src="https://cdn.tailwindcss.com">
+   </script>
+   <script>
     tailwind.config = { theme: { extend: { colors: { gold: '#D4AF37' } } } };
-  </script>
-  <link rel="stylesheet" href="/assets/blog.css?v=1768812469">
-  
-  <script type="application/ld+json">
-[
+   </script>
+   <link href="/assets/blog.css?v=1768819365" rel="stylesheet"/>
+   <script type="application/ld+json">
+    [
   {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -72,9 +75,8 @@
     ]
   }
 ]
-</script>
-  
-  <style>
+   </script>
+   <style>
     html{scroll-behavior:smooth}
     .bg-grid{background-image:radial-gradient(rgba(212,175,55,.08) 1px, transparent 1px);background-size:24px 24px}
     .gold-gradient{background-image:linear-gradient(135deg, #D4AF37 0%, #f5e6a3 100%)}
@@ -147,363 +149,747 @@
     @media (min-width:768px){#pricing,#compare,#blog{margin-bottom:4rem}}
     @media (min-width:1024px){#pricing,#compare,#blog{margin-bottom:4.5rem}}
     #pricing::after,#compare::after,#blog::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2rem;background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.28) 100%);pointer-events:none}
-  </style>
-</head>
-<body class="ambient bg-black text-slate-100 antialiased pb-20 md:pb-0">
-  <div class="pointer-events-none fixed -z-10 top-[-10rem] left-[-6rem] w-[30rem] h-[30rem] rounded-full bg-purple-600/20 blur-[120px] animate-aurora"></div>
-  <div class="pointer-events-none fixed -z-10 top-[20%] right-[-8rem] w-[26rem] h-[26rem] rounded-full bg-cyan-500/20 blur-[120px] animate-aurora"></div>
-  <div class="pointer-events-none fixed -z-10 bottom-[-10rem] right-[-6rem] w-[34rem] h-[34rem] rounded-full bg-amber-500/15 blur-[120px] animate-aurora"></div>
+   </style>
+  </meta>
+ </head>
+ <body class="ambient bg-black text-slate-100 antialiased pb-20 md:pb-0">
+  <div class="pointer-events-none fixed -z-10 top-[-10rem] left-[-6rem] w-[30rem] h-[30rem] rounded-full bg-purple-600/20 blur-[120px] animate-aurora">
+  </div>
+  <div class="pointer-events-none fixed -z-10 top-[20%] right-[-8rem] w-[26rem] h-[26rem] rounded-full bg-cyan-500/20 blur-[120px] animate-aurora">
+  </div>
+  <div class="pointer-events-none fixed -z-10 bottom-[-10rem] right-[-6rem] w-[34rem] h-[34rem] rounded-full bg-amber-500/15 blur-[120px] animate-aurora">
+  </div>
   <header class="fixed top-4 left-0 right-0 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="bg-black/70 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] px-4 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3 group shrink-0">
-          <div class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(212,175,55,0.15)]">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-5 h-5">
-              <defs>
-                <linearGradient id="logo-grad-h-new" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FCD34D"/>
-                  <stop offset="50%" stop-color="#D4AF37"/>
-                  <stop offset="100%" stop-color="#B45309"/>
-                </linearGradient>
-              </defs>
-              <rect x="2" y="2" width="60" height="60" rx="14" fill="#151515" stroke="url(#logo-grad-h-new)" stroke-width="1.5"/>
-              <path d="M42 22 L34 22 L34 30 L40 30 C40 30 38 38 32 38 C26.477 38 22 33.523 22 28 C22 22.477 26.477 18 32 18 C35.5 18 37 19.5 38 20.5 L43 15.5 C40 13 36.5 11 32 11 C22.611 11 15 18.611 15 28 C15 37.389 22.611 45 32 45 C41.389 45 47 37 47 30 C47 26 46 22 42 22 Z" fill="url(#logo-grad-h-new)"/>
-              <circle cx="46" cy="18" r="3" fill="#FFF" fill-opacity="0.9"/>
-            </svg>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-base font-bold text-white leading-none tracking-tight group-hover:text-gold transition-colors">X-Grok.Top</span>
-            <span class="text-[0.6rem] text-gold/80 font-mono tracking-widest leading-none mt-0.5">SUPER.AI</span>
-          </div>
-        </a>
-        <nav class="hidden md:flex items-center gap-1">
-          <a href="/" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all">首页</a>
-          <a href="/#pricing" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all">价格</a>
-          <a href="/#compare" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all">对比</a>
-          <a href="/blog/" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all">使用教程</a>
-          <a href="/#faq" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all">问答</a>
-        </nav>
-        <div class="flex items-center gap-3 shrink-0">
-          <a href="/#pricing" class="inline-flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-bold text-black bg-gold btn-shine shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all transform hover:scale-105">
-            <span>立即开通</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </a>
-          
-          <button id="mobileMenuBtn" aria-label="打开菜单" class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border border-white/10 text-slate-300 hover:bg-white/10 transition-colors ml-1">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-          </button>
-        </div>
+   <div class="max-w-7xl mx-auto px-4">
+    <div class="bg-black/70 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] px-4 h-16 flex items-center justify-between">
+     <a class="flex items-center gap-3 group shrink-0" href="/">
+      <div class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+       <svg class="w-5 h-5" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+         <lineargradient id="logo-grad-h-new" x1="0%" x2="100%" y1="0%" y2="100%">
+          <stop offset="0%" stop-color="#FCD34D">
+          </stop>
+          <stop offset="50%" stop-color="#D4AF37">
+          </stop>
+          <stop offset="100%" stop-color="#B45309">
+          </stop>
+         </lineargradient>
+        </defs>
+        <rect fill="#151515" height="60" rx="14" stroke="url(#logo-grad-h-new)" stroke-width="1.5" width="60" x="2" y="2">
+        </rect>
+        <path d="M42 22 L34 22 L34 30 L40 30 C40 30 38 38 32 38 C26.477 38 22 33.523 22 28 C22 22.477 26.477 18 32 18 C35.5 18 37 19.5 38 20.5 L43 15.5 C40 13 36.5 11 32 11 C22.611 11 15 18.611 15 28 C15 37.389 22.611 45 32 45 C41.389 45 47 37 47 30 C47 26 46 22 42 22 Z" fill="url(#logo-grad-h-new)">
+        </path>
+        <circle cx="46" cy="18" fill="#FFF" fill-opacity="0.9" r="3">
+        </circle>
+       </svg>
       </div>
+      <div class="flex flex-col">
+       <span class="text-base font-bold text-white leading-none tracking-tight group-hover:text-gold transition-colors">
+        X-Grok.Top
+       </span>
+       <span class="text-[0.6rem] text-gold/80 font-mono tracking-widest leading-none mt-0.5">
+        SUPER.AI
+       </span>
+      </div>
+     </a>
+     <nav class="hidden md:flex items-center gap-1">
+      <a class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all" href="/">
+       首页
+      </a>
+      <a class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all" href="/#pricing">
+       价格
+      </a>
+      <a class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all" href="/#compare">
+       对比
+      </a>
+      <a class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all" href="/blog/">
+       使用教程
+      </a>
+      <a class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all" href="/#faq">
+       问答
+      </a>
+     </nav>
+     <div class="flex items-center gap-3 shrink-0">
+      <a class="inline-flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-bold text-black bg-gold btn-shine shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all transform hover:scale-105" href="/#pricing">
+       <span>
+        立即开通
+       </span>
+       <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24" width="20">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z">
+        </path>
+       </svg>
+      </a>
+      <button aria-label="打开菜单" class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border border-white/10 text-slate-300 hover:bg-white/10 transition-colors ml-1" id="mobileMenuBtn">
+       <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24" width="20">
+        <path d="M4 6h16M4 12h16M4 18h16">
+        </path>
+       </svg>
+      </button>
+     </div>
     </div>
-    <div id="mobileMenuPanel" class="hidden absolute top-20 left-4 right-4 bg-[#0A0A0A] border border-white/10 rounded-2xl shadow-2xl p-4 flex-col gap-2 z-40 origin-top animate-fade-in-up">
-      <a href="/" class="block px-4 py-3 rounded-xl hover:bg-white/5 text-slate-200 font-medium">首页</a>
-      <a href="/#pricing" class="block px-4 py-3 rounded-xl hover:bg-white/5 text-slate-200 font-medium">价格方案</a>
-      <a href="/#compare" class="block px-4 py-3 rounded-xl hover:bg-white/5 text-slate-200 font-medium">功能对比</a>
-      <a href="/blog/" class="block px-4 py-3 rounded-xl hover:bg-white/5 text-slate-200 font-medium">使用教程</a>
-      <a href="/#faq" class="block px-4 py-3 rounded-xl hover:bg-white/5 text-slate-200 font-medium">常见问题</a>
-    </div>
+   </div>
+   <div class="hidden absolute top-20 left-4 right-4 bg-[#0A0A0A] border border-white/10 rounded-2xl shadow-2xl p-4 flex-col gap-2 z-40 origin-top animate-fade-in-up" id="mobileMenuPanel">
+    <a class="block px-4 py-3 rounded-xl hover:bg-white/5 text-slate-200 font-medium" href="/">
+     首页
+    </a>
+    <a class="block px-4 py-3 rounded-xl hover:bg-white/5 text-slate-200 font-medium" href="/#pricing">
+     价格方案
+    </a>
+    <a class="block px-4 py-3 rounded-xl hover:bg-white/5 text-slate-200 font-medium" href="/#compare">
+     功能对比
+    </a>
+    <a class="block px-4 py-3 rounded-xl hover:bg-white/5 text-slate-200 font-medium" href="/blog/">
+     使用教程
+    </a>
+    <a class="block px-4 py-3 rounded-xl hover:bg-white/5 text-slate-200 font-medium" href="/#faq">
+     常见问题
+    </a>
+   </div>
   </header>
-
   <main>
-    
-        <div class="max-w-7xl mx-auto px-4 pt-32 pb-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <main class="lg:col-span-2">
-                <div class="article-card">
-                    <article class="lg:col-span-2 prose prose-invert max-w-none">
-        <nav aria-label="Breadcrumb" class="mb-6">
-          <ol class="flex items-center space-x-2 text-sm text-slate-400">
-            <li>
-              <a href="/" class="hover:text-gold transition-colors flex items-center gap-1">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
-                首页
-              </a>
-            </li>
-            <li>
-              <svg class="w-4 h-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </li>
-            <li>
-              <a href="/blog/" class="hover:text-gold transition-colors">教程</a>
-            </li>
-            <li>
-              <svg class="w-4 h-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </li>
-            <li>
-              <span class="text-white font-medium truncate max-w-[150px] md:max-w-xs" aria-current="page">会员 vs API</span>
-            </li>
-          </ol>
-        </nav>
-        <h1 class="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Grok会员 vs Grok API：普通用户与开发者该如何选择？</h1>
-        
-        <div class="flex items-center gap-4 text-sm text-slate-500 mb-8 pb-8 border-b border-white/10">
-          <span>📅 2026-01-12</span>
-          <span>👤 X-Grok Team</span>
-          <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-xs">对比指南</span>
-        </div>
-
-        <p class="lead text-lg text-slate-300">
-          随着 xAI 生态的扩展，许多用户对 Grok 的不同产品形态感到困惑。**<a href="/" class="text-gold hover:underline">Grok 会员</a>**和 **Grok API** 的核心区别究竟是什么？本文将从核心定位、功能权限、使用场景和成本效益四个维度进行深度对比，助您精准决策。
-        </p>
-
-        <h2>1. 核心定位差异</h2>
-        <p>两者的根本区别在于**服务对象**和**交付形态**。</p>
-        <div class="grid md:grid-cols-2 gap-6 my-6">
-          <div class="p-4 rounded-xl border border-white/10 bg-slate-900/50">
-            <h3 class="!mt-0 text-gold">🤖 Grok 会员 (SuperGrok)</h3>
-            <ul>
-              <li><strong>本质：</strong>集成在 X (Twitter) 平台或 Grok 官方应用中的“即用型”对话产品。</li>
-              <li><strong>使用方式：</strong>无需编程，通过网页或 APP 像聊天一样直接使用。</li>
-              <li><strong>核心价值：</strong>开箱即用的 AI 个人助理，适合日常问答、搜索和创作。</li>
-              <li><strong>付费模式：</strong>按月/年订阅（例如月费 $16）。</li>
-            </ul>
-          </div>
-          <div class="p-4 rounded-xl border border-white/10 bg-slate-900/50">
-            <h3 class="!mt-0 text-blue-400">⚙️ Grok API</h3>
-            <ul>
-              <li><strong>本质：</strong>xAI 提供的底层编程接口。</li>
-              <li><strong>使用方式：</strong>需要编写代码（如 Python/JS）进行调用，门槛较高。</li>
-              <li><strong>核心价值：</strong>将 Grok 的大脑嵌入到您自己的应用中（如开发客服机器人）。</li>
-              <li><strong>付费模式：</strong>按 Token 用量计费（用多少付多少）。</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2>2. 功能权限对比</h2>
-        <p>虽然底层模型可能相同，但两者的权限配置完全不同：</p>
-        <div class="overflow-x-auto">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="border-b border-white/20">
-                <th class="p-3 text-white">功能维度</th>
-                <th class="p-3 text-gold">Grok 会员</th>
-                <th class="p-3 text-blue-400">Grok API</th>
-              </tr>
-            </thead>
-            <tbody class="text-slate-300 text-sm">
-              <tr class="border-b border-white/10">
-                <td class="p-3">模型版本</td>
-                <td class="p-3">限定版本 (如 Grok 2)</td>
-                <td class="p-3">可灵活选择 (Grok 2/3/mini 等)</td>
-              </tr>
-              <tr class="border-b border-white/10">
-                <td class="p-3">上下文长度</td>
-                <td class="p-3">固定 (如 32k/128k)</td>
-                <td class="p-3">可配置 (最高 128k, 未来支持 1M)</td>
-              </tr>
-              <tr class="border-b border-white/10">
-                <td class="p-3">使用限制</td>
-                <td class="p-3">有频次限制 (如 2小时/50条)</td>
-                <td class="p-3">无硬性限制 (只要充值即可用)</td>
-              </tr>
-              <tr class="border-b border-white/10">
-                <td class="p-3">数据源</td>
-                <td class="p-3">自动接入 X 平台实时数据</td>
-                <td class="p-3">需自行集成外部数据 (<a href="/blog/deepsearch-guide" class="text-blue-400 hover:underline">DeepSearch</a> 需额外配置)</td>
-              </tr>
-              <tr>
-                <td class="p-3">多模态</td>
-                <td class="p-3">原生支持生图/读图</td>
-                <td class="p-3">需分别调用视觉/生图接口</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h2>3. 使用场景分析</h2>
-        <h3>✅ 什么时候选择“会员服务”？</h3>
-        <ul>
-          <li><strong>日常聊天与搜索：</strong>需要快速查询新闻、了解推特热点、闲聊解闷。</li>
-          <li><strong>知识工作：</strong>需要撰写邮件、润色文章、翻译文档，但不想折腾代码。</li>
-          <li><strong>预算可控：</strong>希望每月支出固定（例如 $16 无限次使用），不想担心 API 费用爆炸。</li>
-        </ul>
-
-        <h3>✅ 什么时候选择“API 服务”？</h3>
-        <ul>
-          <li><strong>应用开发：</strong>您正在构建一个 AI 驱动的工具、网站或插件。</li>
-          <li><strong>批量处理：</strong>需要一次性分析 1000 个文档或处理海量数据。</li>
-          <li><strong>定制化需求：</strong>需要微调模型参数、设置系统提示词 (System Prompt) 或构建多智能体系统。</li>
-        </ul>
-
-        <h2>4. 成本效益与避坑建议</h2>
-        <p>在做最终决定前，请考虑以下成本因素：</p>
-        <ul>
-          <li><strong>性价比：</strong>如果您是重度个人用户（每天对话超过 50 轮），<strong>会员服务</strong>的性价比远高于 API，因为 API 是按字数收费的，长对话非常烧钱。</li>
-          <li><strong>技术成本：</strong>API 并非买了就能用，您需要自己搭建界面或使用第三方客户端（如 Chatbox），这需要额外的技术配置。</li>
-          <li><strong>苹果税：</strong>如果您决定订阅会员，在 iOS App Store 购买会产生 30% 的“苹果税”。<strong>建议直接通过网页端或 <a href="/blog/payment-guide" class="text-gold hover:underline">代充渠道</a> 购买</strong>，价格更优。</li>
-        </ul>
-
-        <div class="mt-8 p-6 rounded-xl bg-gradient-to-br from-slate-900 to-black border border-gold/20">
-          <h3 class="!mt-0 text-white">💡 总结建议</h3>
-          <p class="!mb-0">
-            如果您是<strong>普通用户</strong>，需要一个随时待命的 AI 助手，<span class="text-gold font-bold">Grok 会员 (SuperGrok)</span> 是您的唯一最优解；<br>
-            如果您是<strong>开发者或企业</strong>，需要将 Grok 的能力集成到自己的业务系统中，<span class="text-blue-400 font-bold">API 服务</span> 是必经之路。
-          </p>
-        </div>
-
-      </article>
-                </div>
-                
-                <div class="mt-12 pt-8 border-t border-white/10">
-  <h3 class="text-xl font-bold text-white mb-6">相关阅读</h3>
-  <div class="grid gap-4 md:grid-cols-2">
-    
-            <a href="/blog/payment-guide" class="group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold/30 transition-all">
-              <h4 class="text-gold font-bold mb-2 group-hover:text-white transition-colors">Grok会员怎么买？国内支付宝/微信代充 X Premium 蓝标购买指南</h4>
-              <p class="text-xs text-slate-400 line-clamp-2">详解Grok会员怎么买、国内支付失败解决方案。提供Grok会员/X Premium代充服务与独享成品号购买，支持支付宝/微信支付，安全稳定，24小时自动发货。</p>
-            </a>
-            
-            <a href="/blog/deepsearch-guide" class="group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold/30 transition-all">
-              <h4 class="text-gold font-bold mb-2 group-hover:text-white transition-colors">DeepSearch 深度搜索指南</h4>
-              <p class="text-xs text-slate-400 line-clamp-2">Grok DeepSearch 终极指南：从开启方法到高阶提示词模板。掌握实时联网搜索、市场调研与学术检索的核心技巧，大幅提升信息获取效率。</p>
-            </a>
-            
-            <a href="/blog/grok-free-limit-guide" class="group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold/30 transition-all">
-              <h4 class="text-gold font-bold mb-2 group-hover:text-white transition-colors">Grok 免费版额度与使用策略（Grok3/Grok4 全面解析）</h4>
-              <p class="text-xs text-slate-400 line-clamp-2">全面解析 Grok 免费版与 Grok4 额度、DeepSearch 与推理模式消耗规律，提供账户分流与7条高效策略，含支付宝/微信开通建议与升级时机。</p>
-            </a>
-            
-            <a href="/blog/woke-free-guide" class="group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold/30 transition-all">
-              <h4 class="text-gold font-bold mb-2 group-hover:text-white transition-colors">无过滤对话指南</h4>
-              <p class="text-xs text-slate-400 line-clamp-2">深度解析 Grok 无过滤对话模式（Woke-Free Mode）的使用技巧。在合规边界下，如何利用无过滤模式提升真实表达、学术研究与创意写作效率？包含高阶提问模板与风险控制策略，助您释放 AI 的全部潜力。</p>
-            </a>
-            
-  </div>
-</div>
-
-            </main>
-            <aside class="hidden lg:block lg:col-span-1">
-                <div class="sticky top-24 space-y-6">
-  <div class="group relative rounded-2xl border border-gold/30 bg-gradient-to-b from-slate-900/90 to-black/90 backdrop-blur-xl overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.1)] hover:shadow-[0_0_50px_rgba(212,175,55,0.2)] transition-all duration-300">
-    <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-80"></div>
-    <div class="p-6">
-      <div class="flex justify-between items-start mb-4">
-        <div>
-          <h3 class="text-lg font-bold text-white">Grok 4.1 独享成品号</h3>
-          <div class="flex items-center gap-1.5 mt-1">
-            <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
-            <span class="text-[10px] text-green-400 font-medium">库存紧张，24h自动发货</span>
-          </div>
-        </div>
-        <div class="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center text-xl">🚀</div>
-      </div>
-      <div class="flex items-baseline gap-1 mb-4 pb-4 border-b border-white/10">
-        <span class="text-xs text-slate-400 line-through">¥268</span>
-        <span class="text-3xl font-black text-gold">¥250</span>
-        <span class="text-xs text-slate-400">/月</span>
-      </div>
-      <ul class="space-y-3 mb-6">
-        <li class="flex items-start gap-3 text-sm text-slate-300"><i class="fa-solid fa-check text-gold mt-1"></i><span><strong class="text-white">赠送推特蓝标认证</strong> (价值$16)</span></li>
-        <li class="flex items-start gap-3 text-sm text-slate-300"><i class="fa-solid fa-check text-gold mt-1"></i><span>一人一号，独立邮箱，绝对隐私</span></li>
-        <li class="flex items-start gap-3 text-sm text-slate-300"><i class="fa-solid fa-check text-gold mt-1"></i><span>完整解锁 DeepSearch / 生图</span></li>
-      </ul>
-      <div class="bg-white/5 rounded-lg p-3 mb-4 flex items-center justify-between border border-dashed border-white/20 hover:border-gold/50 transition cursor-pointer group/code" onclick="copyCode(this)">
-        <div class="flex flex-col"><span class="text-[10px] text-slate-400">限时优惠码 (93折)</span><code class="font-mono text-gold font-bold text-lg">xmpick</code></div>
-        <div class="w-8 h-8 rounded bg-gold/10 flex items-center justify-center text-gold group-hover/code:scale-110 transition"><i class="fa-regular fa-copy"></i></div>
-      </div>
-      <a href="/#pricing" class="relative w-full flex items-center justify-center gap-2 py-3.5 bg-gold text-black font-bold rounded-xl hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:-translate-y-0.5"><span>立即抢购</span><i class="fa-solid fa-arrow-right"></i></a>
-      <div class="mt-4 flex items-center justify-center gap-4 text-[10px] text-slate-500">
-        <span class="flex items-center gap-1"><i class="fa-brands fa-alipay text-blue-500"></i> 支付宝</span>
-        <span class="flex items-center gap-1"><i class="fa-brands fa-weixin text-green-500"></i> 微信支付</span>
-      </div>
-    </div>
-  </div>
-  <div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[0.08] transition">
-    <div class="flex items-center justify-between mb-2"><h4 class="font-bold text-white">已有账号代充</h4><span class="text-gold font-bold">¥245</span></div>
-    <p class="text-xs text-slate-400 mb-4">保留所有关注和历史，无缝升级。</p>
-    <a href="/#pricing" class="block w-full py-2 rounded-lg border border-white/20 text-center text-sm text-slate-300 hover:text-white hover:border-white/40 transition">升级我的老号</a>
-  </div>
-</div>
-
-            </aside>
-        </div>
-        
-  </main>
-
-<footer class="relative border-t border-white/5 bg-[#050505] overflow-hidden">
-    <div class="absolute top-0 left-[-10%] w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] pointer-events-none opacity-50"></div>
-    <div class="absolute bottom-0 right-[-10%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none opacity-30"></div>
-    
-    <div class="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-16">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-        <div class="lg:col-span-4 flex flex-col items-start space-y-6">
-          <a href="/" class="flex items-center gap-3 group">
-            <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] overflow-hidden">
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-6 h-6">
-                  <defs>
-                    <linearGradient id="logo-grad-footer" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#FCD34D"/>
-                      <stop offset="50%" stop-color="#D4AF37"/>
-                      <stop offset="100%" stop-color="#B45309"/>
-                    </linearGradient>
-                  </defs>
-                  <rect x="2" y="2" width="60" height="60" rx="14" fill="#151515" stroke="url(#logo-grad-footer)" stroke-width="1.5"/>
-                  <path d="M42 22 L34 22 L34 30 L40 30 C40 30 38 38 32 38 C26.477 38 22 33.523 22 28 C22 22.477 26.477 18 32 18 C35.5 18 37 19.5 38 20.5 L43 15.5 C40 13 36.5 11 32 11 C22.611 11 15 18.611 15 28 C15 37.389 22.611 45 32 45 C41.389 45 47 37 47 30 C47 26 46 22 42 22 Z" fill="url(#logo-grad-footer)"/>
-                  <circle cx="46" cy="18" r="3" fill="#FFF" fill-opacity="0.9"/>
-               </svg>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-lg font-bold text-white tracking-tight">X-Grok.Top</span>
-              <span class="text-[10px] text-gold/80 font-mono tracking-widest uppercase">Premier Service</span>
-            </div>
+   <div class="max-w-7xl mx-auto px-4 pt-32 pb-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+    <main class="lg:col-span-2">
+     <div class="article-card">
+      <article class="lg:col-span-2 prose prose-invert max-w-none">
+       <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm text-slate-400">
+         <li>
+          <a class="hover:text-gold transition-colors flex items-center gap-1" href="/">
+           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            </path>
+           </svg>
+           首页
           </a>
-          <p class="text-sm text-slate-500 leading-7 max-w-sm">专注 Grok会员 购买与代充服务。<br>消除跨境支付壁垒，助您无缝接入 X 智能生态。</p>
+         </li>
+         <li>
+          <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
+         </li>
+         <li>
+          <a class="hover:text-gold transition-colors" href="/blog/">
+           教程
+          </a>
+         </li>
+         <li>
+          <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
+         </li>
+         <li>
+          <span aria-current="page" class="text-white font-medium truncate max-w-[150px] md:max-w-xs">
+           会员 vs API
+          </span>
+         </li>
+        </ol>
+       </nav>
+       <h1 class="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+        Grok会员 vs Grok API：普通用户与开发者该如何选择？
+       </h1>
+       <div class="flex items-center gap-4 text-sm text-slate-500 mb-8 pb-8 border-b border-white/10">
+        <span>
+         📅 2026-01-12
+        </span>
+        <span>
+         👤 X-Grok Team
+        </span>
+        <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-xs">
+         对比指南
+        </span>
+       </div>
+       <p class="lead text-lg text-slate-300">
+        随着 xAI 生态的扩展，许多用户对 Grok 的不同产品形态感到困惑。**
+        <a class="text-gold hover:underline" href="/">
+         Grok 会员
+        </a>
+        **和 **Grok API** 的核心区别究竟是什么？本文将从核心定位、功能权限、使用场景和成本效益四个维度进行深度对比，助您精准决策。
+       </p>
+       <h2>
+        1. 核心定位差异
+       </h2>
+       <p>
+        两者的根本区别在于**服务对象**和**交付形态**。
+       </p>
+       <div class="grid md:grid-cols-2 gap-6 my-6">
+        <div class="p-4 rounded-xl border border-white/10 bg-slate-900/50">
+         <h3 class="!mt-0 text-gold">
+          🤖 Grok 会员 (SuperGrok)
+         </h3>
+         <ul>
+          <li>
+           <strong>
+            本质：
+           </strong>
+           集成在 X (Twitter) 平台或 Grok 官方应用中的“即用型”对话产品。
+          </li>
+          <li>
+           <strong>
+            使用方式：
+           </strong>
+           无需编程，通过网页或 APP 像聊天一样直接使用。
+          </li>
+          <li>
+           <strong>
+            核心价值：
+           </strong>
+           开箱即用的 AI 个人助理，适合日常问答、搜索和创作。
+          </li>
+          <li>
+           <strong>
+            付费模式：
+           </strong>
+           按月/年订阅（例如月费 $16）。
+          </li>
+         </ul>
         </div>
-
-        <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8 lg:pl-12">
-          <div class="flex flex-col space-y-4">
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider">核心产品</h4>
-              <ul class="space-y-2 text-sm text-slate-500">
-                  <li><a href="/#pricing" class="hover:text-gold transition-colors">SuperGrok 成品号</a></li>
-                  <li><a href="/#pricing" class="hover:text-gold transition-colors">账号代充升级</a></li>
-                  <li><a href="/#pricing" class="hover:text-gold transition-colors">共享体验号</a></li>
-              </ul>
-          </div>
-          <div class="flex flex-col space-y-4">
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider">使用教程</h4>
-              <ul class="space-y-2 text-sm text-slate-500">
-                  <li><a href="/blog/payment-guide" class="hover:text-gold transition-colors">国内支付指南</a></li>
-                  <li><a href="/blog/deepsearch-guide" class="hover:text-gold transition-colors">DeepSearch 技巧</a></li>
-                  <li><a href="/blog/woke-free-guide" class="hover:text-gold transition-colors">无过滤对话模式</a></li>
-                  <li><a href="/blog/grok-membership-worth" class="hover:text-gold transition-colors">是否值得购买？</a></li>
-              </ul>
-          </div>
-          <div class="flex flex-col space-y-4">
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider">支持与法律</h4>
-              <ul class="space-y-2 text-sm text-slate-500">
-                  <li><a href="/about" class="hover:text-gold transition-colors">关于我们</a></li>
-                  <li><a href="/sitemap" class="hover:text-gold transition-colors">网站地图</a></li>
-                  <li><a href="/policies#terms" class="hover:text-gold transition-colors">服务条款</a></li>
-                  <li><a href="/policies#privacy" class="hover:text-gold transition-colors">隐私政策</a></li>
-              </ul>
-          </div>
-          <div class="flex flex-col space-y-4">
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider">联系我们</h4>
-              <p class="text-xs text-slate-500">support@x-grok.top</p>
-          </div>
+        <div class="p-4 rounded-xl border border-white/10 bg-slate-900/50">
+         <h3 class="!mt-0 text-blue-400">
+          ⚙️ Grok API
+         </h3>
+         <ul>
+          <li>
+           <strong>
+            本质：
+           </strong>
+           xAI 提供的底层编程接口。
+          </li>
+          <li>
+           <strong>
+            使用方式：
+           </strong>
+           需要编写代码（如 Python/JS）进行调用，门槛较高。
+          </li>
+          <li>
+           <strong>
+            核心价值：
+           </strong>
+           将 Grok 的大脑嵌入到您自己的应用中（如开发客服机器人）。
+          </li>
+          <li>
+           <strong>
+            付费模式：
+           </strong>
+           按 Token 用量计费（用多少付多少）。
+          </li>
+         </ul>
         </div>
+       </div>
+       <h2>
+        2. 功能权限对比
+       </h2>
+       <p>
+        虽然底层模型可能相同，但两者的权限配置完全不同：
+       </p>
+       <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+         <thead>
+          <tr class="border-b border-white/20">
+           <th class="p-3 text-white">
+            功能维度
+           </th>
+           <th class="p-3 text-gold">
+            Grok 会员
+           </th>
+           <th class="p-3 text-blue-400">
+            Grok API
+           </th>
+          </tr>
+         </thead>
+         <tbody class="text-slate-300 text-sm">
+          <tr class="border-b border-white/10">
+           <td class="p-3">
+            模型版本
+           </td>
+           <td class="p-3">
+            限定版本 (如 Grok 2)
+           </td>
+           <td class="p-3">
+            可灵活选择 (Grok 2/3/mini 等)
+           </td>
+          </tr>
+          <tr class="border-b border-white/10">
+           <td class="p-3">
+            上下文长度
+           </td>
+           <td class="p-3">
+            固定 (如 32k/128k)
+           </td>
+           <td class="p-3">
+            可配置 (最高 128k, 未来支持 1M)
+           </td>
+          </tr>
+          <tr class="border-b border-white/10">
+           <td class="p-3">
+            使用限制
+           </td>
+           <td class="p-3">
+            有频次限制 (如 2小时/50条)
+           </td>
+           <td class="p-3">
+            无硬性限制 (只要充值即可用)
+           </td>
+          </tr>
+          <tr class="border-b border-white/10">
+           <td class="p-3">
+            数据源
+           </td>
+           <td class="p-3">
+            自动接入 X 平台实时数据
+           </td>
+           <td class="p-3">
+            需自行集成外部数据 (
+            <a class="text-blue-400 hover:underline" href="/blog/deepsearch-guide">
+             DeepSearch
+            </a>
+            需额外配置)
+           </td>
+          </tr>
+          <tr>
+           <td class="p-3">
+            多模态
+           </td>
+           <td class="p-3">
+            原生支持生图/读图
+           </td>
+           <td class="p-3">
+            需分别调用视觉/生图接口
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <h2>
+        3. 使用场景分析
+       </h2>
+       <h3>
+        ✅ 什么时候选择“会员服务”？
+       </h3>
+       <ul>
+        <li>
+         <strong>
+          日常聊天与搜索：
+         </strong>
+         需要快速查询新闻、了解推特热点、闲聊解闷。
+        </li>
+        <li>
+         <strong>
+          知识工作：
+         </strong>
+         需要撰写邮件、润色文章、翻译文档，但不想折腾代码。
+        </li>
+        <li>
+         <strong>
+          预算可控：
+         </strong>
+         希望每月支出固定（例如 $16 无限次使用），不想担心 API 费用爆炸。
+        </li>
+       </ul>
+       <h3>
+        ✅ 什么时候选择“API 服务”？
+       </h3>
+       <ul>
+        <li>
+         <strong>
+          应用开发：
+         </strong>
+         您正在构建一个 AI 驱动的工具、网站或插件。
+        </li>
+        <li>
+         <strong>
+          批量处理：
+         </strong>
+         需要一次性分析 1000 个文档或处理海量数据。
+        </li>
+        <li>
+         <strong>
+          定制化需求：
+         </strong>
+         需要微调模型参数、设置系统提示词 (System Prompt) 或构建多智能体系统。
+        </li>
+       </ul>
+       <h2>
+        4. 成本效益与避坑建议
+       </h2>
+       <p>
+        在做最终决定前，请考虑以下成本因素：
+       </p>
+       <ul>
+        <li>
+         <strong>
+          性价比：
+         </strong>
+         如果您是重度个人用户（每天对话超过 50 轮），
+         <strong>
+          会员服务
+         </strong>
+         的性价比远高于 API，因为 API 是按字数收费的，长对话非常烧钱。
+        </li>
+        <li>
+         <strong>
+          技术成本：
+         </strong>
+         API 并非买了就能用，您需要自己搭建界面或使用第三方客户端（如 Chatbox），这需要额外的技术配置。
+        </li>
+        <li>
+         <strong>
+          苹果税：
+         </strong>
+         如果您决定订阅会员，在 iOS App Store 购买会产生 30% 的“苹果税”。
+         <strong>
+          建议直接通过网页端或
+          <a class="text-gold hover:underline" href="/blog/payment-guide">
+           代充渠道
+          </a>
+          购买
+         </strong>
+         ，价格更优。
+        </li>
+       </ul>
+       <div class="mt-8 p-6 rounded-xl bg-gradient-to-br from-slate-900 to-black border border-gold/20">
+        <h3 class="!mt-0 text-white">
+         💡 总结建议
+        </h3>
+        <p class="!mb-0">
+         如果您是
+         <strong>
+          普通用户
+         </strong>
+         ，需要一个随时待命的 AI 助手，
+         <span class="text-gold font-bold">
+          Grok 会员 (SuperGrok)
+         </span>
+         是您的唯一最优解；
+         <br/>
+         如果您是
+         <strong>
+          开发者或企业
+         </strong>
+         ，需要将 Grok 的能力集成到自己的业务系统中，
+         <span class="text-blue-400 font-bold">
+          API 服务
+         </span>
+         是必经之路。
+        </p>
+       </div>
+      </article>
+     </div>
+     <div class="mt-12 pt-8 border-t border-white/10">
+      <h3 class="text-xl font-bold text-white mb-6">
+       相关阅读
+      </h3>
+      <div class="grid gap-4 md:grid-cols-2">
+       <a class="group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold/30 transition-all" href="/blog/grok-free-limit-guide">
+        <h4 class="text-gold font-bold mb-2 group-hover:text-white transition-colors">
+         Grok 免费版额度与使用策略（Grok3/Grok4 全面解析）
+        </h4>
+        <p class="text-xs text-slate-400 line-clamp-2">
+         全面解析 Grok 免费版与 Grok4 额度、DeepSearch 与推理模式消耗规律，提供账户分流与7条高效策略，含支付宝/微信开通建议与升级时机。
+        </p>
+       </a>
+       <a class="group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold/30 transition-all" href="/blog/grok-app-vs-x-integrated">
+        <h4 class="text-gold font-bold mb-2 group-hover:text-white transition-colors">
+         Grok App vs X内置Grok：哪个更好用？功能差异与选择指南
+        </h4>
+        <p class="text-xs text-slate-400 line-clamp-2">
+         深度解析独立Grok App与X内置Grok的区别，从流畅度、功能、免费额度全方位对比。教你如何利用多账号策略最大化免费额度，以及何时升级SuperGrok会员。
+        </p>
+       </a>
+       <a class="group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold/30 transition-all" href="/blog/grok-deepsearch-review">
+        <h4 class="text-gold font-bold mb-2 group-hover:text-white transition-colors">
+         Grok DeepSearch 评测：快、准、狠的实时 AI 搜索助手
+        </h4>
+        <p class="text-xs text-slate-400 line-clamp-2">
+         深度评测 Grok DeepSearch 功能。相比 ChatGPT，它在速度、实时性和 X 平台整合方面表现如何？适合哪些用户？核心亮点与短板全解析。
+        </p>
+       </a>
+       <a class="group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold/30 transition-all" href="/blog/grok-free-vs-membership">
+        <h4 class="text-gold font-bold mb-2 group-hover:text-white transition-colors">
+         Grok会员 vs 免费版：差异与选择指南
+        </h4>
+        <p class="text-xs text-slate-400 line-clamp-2">
+         详解 Grok 免费版与 SuperGrok 会员的请求额度、功能权限、稳定性、价格与支付（含银联），并提供选择建议与相关教程。
+        </p>
+       </a>
       </div>
-
-      <div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-8"></div>
-      
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6 mt-8">
-          <div class="text-[11px] text-slate-600 text-center md:text-left">
-              <span>&copy; 2025 X-Grok.top. All rights reserved.</span>
-              <span class="hidden md:inline text-slate-700 mx-2">|</span>
-              <span>非官方导航站，与 X Corp 无关联。</span>
+     </div>
+    </main>
+    <aside class="hidden lg:block lg:col-span-1">
+     <div class="sticky top-24 space-y-6">
+      <div class="group relative rounded-2xl border border-gold/30 bg-gradient-to-b from-slate-900/90 to-black/90 backdrop-blur-xl overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.1)] hover:shadow-[0_0_50px_rgba(212,175,55,0.2)] transition-all duration-300">
+       <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-80">
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-4">
+         <div>
+          <h3 class="text-lg font-bold text-white">
+           Grok 4.1 独享成品号
+          </h3>
+          <div class="flex items-center gap-1.5 mt-1">
+           <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75">
+            </span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500">
+            </span>
+           </span>
+           <span class="text-[10px] text-green-400 font-medium">
+            库存紧张，24h自动发货
+           </span>
           </div>
-          <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-green-500"></span>
-              <span class="text-[10px] text-slate-500 uppercase">System Stable</span>
-          </div>
+         </div>
+         <div class="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center text-xl">
+          🚀
+         </div>
+        </div>
+        <div class="flex items-baseline gap-1 mb-4 pb-4 border-b border-white/10">
+         <span class="text-xs text-slate-400 line-through">
+          ¥268
+         </span>
+         <span class="text-3xl font-black text-gold">
+          ¥250
+         </span>
+         <span class="text-xs text-slate-400">
+          /月
+         </span>
+        </div>
+        <ul class="space-y-3 mb-6">
+         <li class="flex items-start gap-3 text-sm text-slate-300">
+          <i class="fa-solid fa-check text-gold mt-1">
+          </i>
+          <span>
+           <strong class="text-white">
+            赠送推特蓝标认证
+           </strong>
+           (价值$16)
+          </span>
+         </li>
+         <li class="flex items-start gap-3 text-sm text-slate-300">
+          <i class="fa-solid fa-check text-gold mt-1">
+          </i>
+          <span>
+           一人一号，独立邮箱，绝对隐私
+          </span>
+         </li>
+         <li class="flex items-start gap-3 text-sm text-slate-300">
+          <i class="fa-solid fa-check text-gold mt-1">
+          </i>
+          <span>
+           完整解锁 DeepSearch / 生图
+          </span>
+         </li>
+        </ul>
+        <div class="bg-white/5 rounded-lg p-3 mb-4 flex items-center justify-between border border-dashed border-white/20 hover:border-gold/50 transition cursor-pointer group/code" onclick="copyCode(this)">
+         <div class="flex flex-col">
+          <span class="text-[10px] text-slate-400">
+           限时优惠码 (93折)
+          </span>
+          <code class="font-mono text-gold font-bold text-lg">
+           xmpick
+          </code>
+         </div>
+         <div class="w-8 h-8 rounded bg-gold/10 flex items-center justify-center text-gold group-hover/code:scale-110 transition">
+          <i class="fa-regular fa-copy">
+          </i>
+         </div>
+        </div>
+        <a class="relative w-full flex items-center justify-center gap-2 py-3.5 bg-gold text-black font-bold rounded-xl hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:-translate-y-0.5" href="/#pricing">
+         <span>
+          立即抢购
+         </span>
+         <i class="fa-solid fa-arrow-right">
+         </i>
+        </a>
+        <div class="mt-4 flex items-center justify-center gap-4 text-[10px] text-slate-500">
+         <span class="flex items-center gap-1">
+          <i class="fa-brands fa-alipay text-blue-500">
+          </i>
+          支付宝
+         </span>
+         <span class="flex items-center gap-1">
+          <i class="fa-brands fa-weixin text-green-500">
+          </i>
+          微信支付
+         </span>
+        </div>
+       </div>
       </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/[0.08] transition">
+       <div class="flex items-center justify-between mb-2">
+        <h4 class="font-bold text-white">
+         已有账号代充
+        </h4>
+        <span class="text-gold font-bold">
+         ¥245
+        </span>
+       </div>
+       <p class="text-xs text-slate-400 mb-4">
+        保留所有关注和历史，无缝升级。
+       </p>
+       <a class="block w-full py-2 rounded-lg border border-white/20 text-center text-sm text-slate-300 hover:text-white hover:border-white/40 transition" href="/#pricing">
+        升级我的老号
+       </a>
+      </div>
+     </div>
+    </aside>
+   </div>
+  </main>
+  <footer class="relative border-t border-white/5 bg-[#050505] overflow-hidden">
+   <div class="absolute top-0 left-[-10%] w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] pointer-events-none opacity-50">
+   </div>
+   <div class="absolute bottom-0 right-[-10%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none opacity-30">
+   </div>
+   <div class="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+     <div class="lg:col-span-4 flex flex-col items-start space-y-6">
+      <a class="flex items-center gap-3 group" href="/">
+       <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] overflow-hidden">
+        <svg class="w-6 h-6" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+         <defs>
+          <lineargradient id="logo-grad-footer" x1="0%" x2="100%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="#FCD34D">
+           </stop>
+           <stop offset="50%" stop-color="#D4AF37">
+           </stop>
+           <stop offset="100%" stop-color="#B45309">
+           </stop>
+          </lineargradient>
+         </defs>
+         <rect fill="#151515" height="60" rx="14" stroke="url(#logo-grad-footer)" stroke-width="1.5" width="60" x="2" y="2">
+         </rect>
+         <path d="M42 22 L34 22 L34 30 L40 30 C40 30 38 38 32 38 C26.477 38 22 33.523 22 28 C22 22.477 26.477 18 32 18 C35.5 18 37 19.5 38 20.5 L43 15.5 C40 13 36.5 11 32 11 C22.611 11 15 18.611 15 28 C15 37.389 22.611 45 32 45 C41.389 45 47 37 47 30 C47 26 46 22 42 22 Z" fill="url(#logo-grad-footer)">
+         </path>
+         <circle cx="46" cy="18" fill="#FFF" fill-opacity="0.9" r="3">
+         </circle>
+        </svg>
+       </div>
+       <div class="flex flex-col">
+        <span class="text-lg font-bold text-white tracking-tight">
+         X-Grok.Top
+        </span>
+        <span class="text-[10px] text-gold/80 font-mono tracking-widest uppercase">
+         Premier Service
+        </span>
+       </div>
+      </a>
+      <p class="text-sm text-slate-500 leading-7 max-w-sm">
+       专注 Grok会员 购买与代充服务。
+       <br/>
+       消除跨境支付壁垒，助您无缝接入 X 智能生态。
+      </p>
+     </div>
+     <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8 lg:pl-12">
+      <div class="flex flex-col space-y-4">
+       <h4 class="text-xs font-bold text-white uppercase tracking-wider">
+        核心产品
+       </h4>
+       <ul class="space-y-2 text-sm text-slate-500">
+        <li>
+         <a class="hover:text-gold transition-colors" href="/#pricing">
+          SuperGrok 成品号
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-gold transition-colors" href="/#pricing">
+          账号代充升级
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-gold transition-colors" href="/#pricing">
+          共享体验号
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="flex flex-col space-y-4">
+       <h4 class="text-xs font-bold text-white uppercase tracking-wider">
+        使用教程
+       </h4>
+       <ul class="space-y-2 text-sm text-slate-500">
+        <li>
+         <a class="hover:text-gold transition-colors" href="/blog/payment-guide">
+          国内支付指南
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-gold transition-colors" href="/blog/deepsearch-guide">
+          DeepSearch 技巧
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-gold transition-colors" href="/blog/woke-free-guide">
+          无过滤对话模式
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-gold transition-colors" href="/blog/grok-membership-worth">
+          是否值得购买？
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="flex flex-col space-y-4">
+       <h4 class="text-xs font-bold text-white uppercase tracking-wider">
+        支持与法律
+       </h4>
+       <ul class="space-y-2 text-sm text-slate-500">
+        <li>
+         <a class="hover:text-gold transition-colors" href="/about">
+          关于我们
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-gold transition-colors" href="/sitemap">
+          网站地图
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-gold transition-colors" href="/policies#terms">
+          服务条款
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-gold transition-colors" href="/policies#privacy">
+          隐私政策
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="flex flex-col space-y-4">
+       <h4 class="text-xs font-bold text-white uppercase tracking-wider">
+        联系我们
+       </h4>
+       <p class="text-xs text-slate-500">
+        support@x-grok.top
+       </p>
+      </div>
+     </div>
     </div>
-    
-    <script type="application/ld+json">
+    <div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-8">
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6 mt-8">
+     <div class="text-[11px] text-slate-600 text-center md:text-left">
+      <span>
+       © 2025 X-Grok.top. All rights reserved.
+      </span>
+      <span class="hidden md:inline text-slate-700 mx-2">
+       |
+      </span>
+      <span>
+       非官方导航站，与 X Corp 无关联。
+      </span>
+     </div>
+     <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-green-500">
+      </span>
+      <span class="text-[10px] text-slate-500 uppercase">
+       System Stable
+      </span>
+     </div>
+    </div>
+   </div>
+   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -513,22 +899,32 @@
       "description": "专业Grok会员代充与账号购买平台",
       "sameAs": ["https://twitter.com/Grok"]
     }
-    </script>
-</footer>
-
+   </script>
+  </footer>
   <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-lg border-t border-gold/20 pb-safe">
-  <div class="flex items-center justify-between px-4 py-3">
+   <div class="flex items-center justify-between px-4 py-3">
     <div class="flex flex-col">
-      <span class="text-[10px] text-slate-400 line-through">原价 ¥268</span>
-      <div class="flex items-baseline gap-1"><span class="text-gold font-bold text-lg">¥250</span><span class="text-[10px] text-gold/80 bg-gold/10 px-1 rounded">限时特惠</span></div>
+     <span class="text-[10px] text-slate-400 line-through">
+      原价 ¥268
+     </span>
+     <div class="flex items-baseline gap-1">
+      <span class="text-gold font-bold text-lg">
+       ¥250
+      </span>
+      <span class="text-[10px] text-gold/80 bg-gold/10 px-1 rounded">
+       限时特惠
+      </span>
+     </div>
     </div>
-    <a href="/#pricing" class="flex items-center gap-2 px-6 py-2.5 bg-gold text-black font-bold rounded-full shadow-[0_0_15px_rgba(212,175,55,0.3)] animate-pulse-slow">立即开通 <i class="fa-solid fa-bolt text-xs"></i></a>
+    <a class="flex items-center gap-2 px-6 py-2.5 bg-gold text-black font-bold rounded-full shadow-[0_0_15px_rgba(212,175,55,0.3)] animate-pulse-slow" href="/#pricing">
+     立即开通
+     <i class="fa-solid fa-bolt text-xs">
+     </i>
+    </a>
+   </div>
   </div>
-</div>
-
-
   <script>
-    document.querySelectorAll('#accordion button').forEach(function(btn){
+   document.querySelectorAll('#accordion button').forEach(function(btn){
       btn.addEventListener('click', function(){
         var expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', expanded ? 'false' : 'true');
@@ -591,7 +987,7 @@
     });
   </script>
   <script>
-    (function(){
+   (function(){
       var els = document.querySelectorAll('.reveal-soft');
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if(reduce){ els.forEach(function(el){ el.classList.add('active'); }); return; }
@@ -603,5 +999,5 @@
       els.forEach(function(el){ io.observe(el); });
     })();
   </script>
-</body>
+ </body>
 </html>

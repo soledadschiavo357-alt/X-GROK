@@ -5,6 +5,7 @@ import datetime
 import random
 import shutil
 import textwrap
+from bs4 import BeautifulSoup
 
 # 1. 基础配置
 SITE_URL = "https://x-grok.top"
@@ -30,6 +31,14 @@ def read_file(path):
         return f.read()
 
 def write_file(path, content):
+    if path.endswith(".html"):
+        try:
+            # Use BeautifulSoup to prettify HTML for consistent formatting
+            soup = BeautifulSoup(content, "html.parser")
+            content = soup.prettify()
+        except Exception as e:
+            print(f"Warning: Could not prettify {path}: {e}")
+
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
 
@@ -259,6 +268,17 @@ def build_home(posts):
     home_schema_json = json.dumps(home_schema, ensure_ascii=False, indent=2)
     home_schema_script = f'<script type="application/ld+json">\n{home_schema_json}\n</script>'
     full_html = full_html.replace("{{ schema }}", home_schema_script)
+    
+    # Path Fixes for content
+    # 最终方案：使用根相对路径 (Root-Relative)
+    full_html = full_html.replace('src="assets/', 'src="/assets/')
+    full_html = full_html.replace('href="assets/', 'href="/assets/')
+    
+    full_html = full_html.replace('href="/"', 'href="/"')
+    full_html = full_html.replace('href="/#', 'href="/#')
+    full_html = full_html.replace('href="/blog/"', 'href="/blog/"')
+    full_html = full_html.replace('href="/blog/', 'href="/blog/')
+    full_html = full_html.replace('src="/assets/', 'src="/assets/')
     
     write_file("index.html", full_html)
     print("index.html built.")
