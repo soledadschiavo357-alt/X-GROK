@@ -218,6 +218,7 @@ def build_home(posts):
     full_html = full_html.replace("{{ canonical }}", home_url)
     
     home_head_meta = textwrap.dedent(f'''
+    <meta name="baidu-site-verification" content="codeva-KQlVH1DEtT" />
     <meta name="keywords" content="Grok会员, Grok会员购买, Grok会员代充, Grok会员价格, Grok会员共享, Grok账号, Grok会员开通, X Premium 蓝标认证, Grok会员升级, Grok会员有什么用">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#000000">
