@@ -43,6 +43,7 @@ SITE_DOMAIN = "x-grok.top"
 SITE_URL = f"https://{SITE_DOMAIN}"
 CONVERSION_KEYWORDS = ["Grok 4.1 独享成品号", "sidebar_card", "sidebar-card"]
 IGNORE_PREFIXES = ["/go/", "/legal"] # Ignore these paths for 404 checks
+SKIP_FILES = ["404.html", "googlea685aa8ff3686b48.html"]
 
 # Data structures
 all_html_files = set()
@@ -219,7 +220,7 @@ def check_sitemaps():
 
     # Check File -> XML
     for f in all_html_files:
-        if f in ["404.html", "google_verification.html", "baidu_verification.html", "sitemap_template.html", "preview_card.html", "policies.html"]: continue
+        if f in ["google_verification.html", "baidu_verification.html", "sitemap_template.html", "preview_card.html", "policies.html"] or f in SKIP_FILES: continue
         
         # Construct expected URL
         if f == "index.html":
@@ -403,12 +404,14 @@ def main():
     
     # 2. Crawl & Analyze
     for f in all_html_files:
+        if f in SKIP_FILES: continue
         audit_file(f)
         
     # 3. Weight Flow (Orphans)
     orphans = []
     for f in all_html_files:
-        if f == "index.html": continue 
+        if f == "index.html": continue
+        if f in SKIP_FILES: continue
         if f not in linked_pages:
             orphans.append(f)
             warnings.append(f"[{f}] 孤岛页面: 存在但从未被内部链接引用")
@@ -494,6 +497,7 @@ def main():
     low_weight_count = 0
     for f in all_html_files:
         if f == "index.html": continue
+        if f in SKIP_FILES: continue
         count = len(inbound_links.get(f, []))
         if count < 3 and f not in orphans: # orphans already reported
             low_weight_count += 1
