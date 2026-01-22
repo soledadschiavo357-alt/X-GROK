@@ -50,6 +50,8 @@ all_html_files = set()
 linked_pages = set()
 inbound_links = defaultdict(list) # target_page -> [source_pages]
 external_links_map = defaultdict(list) # external_url -> [source_pages]
+unsafe_external_links = defaultdict(set) # external_url -> {source_pages_with_issues}
+soft_routing_map = defaultdict(list) # soft_route -> [source_pages]
 clean_url_issues = []
 redirect_issues = [] # (source_page, link_url, status_code, final_url)
 sitemap_xml_urls = set()
@@ -306,6 +308,19 @@ def audit_file(file_path):
 
         href = href.strip()
 
+        # Check Soft Routing / Sales Links
+        if href.startswith('/go/'):
+            soft_routing_map[href].append(file_path)
+            
+            rel = a.get("rel", [])
+            if isinstance(rel, str):
+                rel = rel.split()
+            
+            # Strict check for sales links
+            required_rel = {"nofollow", "sponsored", "noopener", "noreferrer"}
+            if not required_rel.issubset(set(rel)):
+                warnings.append(f"[{file_path}] 软路由/销售链接警告: {href} (缺少 rel=\"nofollow sponsored noopener noreferrer\")")
+
         # Check Protocol
         if "http://x-grok.top" in href:
              warnings.append(f"[{file_path}] 不安全协议: {href} (应使用 https)")
@@ -379,6 +394,16 @@ def audit_file(file_path):
             stats["external_links"] += 1
             # Record external link
             external_links_map[href].append(file_path)
+            
+            # Check rel attribute for external links
+            rel = a.get("rel", [])
+            if isinstance(rel, str):
+                rel = rel.split()
+            
+            required_rel = {"nofollow", "noopener", "noreferrer"}
+            if not required_rel.issubset(set(rel)):
+                warnings.append(f"[{file_path}] 外链安全警告: {href} (缺少 rel=\"nofollow noopener noreferrer\")")
+                unsafe_external_links[href].add(file_path)
 
     # 4. Conversion Check (blog posts only)
     if file_path.startswith("blog/") and file_path != "blog/index.html":
@@ -462,6 +487,40 @@ def main():
     else:
         print(f"\n{Colors.GREEN}🔄 重定向状态: 完美 (无内部跳转){Colors.RESET}")
 
+    # Soft Routing Report
+    print(f"\n{Colors.PURPLE}🛍️  软路由/销售链接分布{Colors.RESET}")
+    if soft_routing_map:
+        # Load _redirects to verify validity
+        valid_redirects = set()
+        if os.path.exists("_redirects"):
+            try:
+                with open("_redirects", "r", encoding="utf-8") as f:
+                    for line in f:
+                        parts = line.strip().split()
+                        if parts and parts[0].startswith("/"):
+                            valid_redirects.add(parts[0])
+            except Exception as e:
+                print(f"  {Colors.RED}[ERROR] 读取 _redirects 失败: {e}{Colors.RESET}")
+
+        for url, sources in soft_routing_map.items():
+            status = f"{Colors.GREEN}[VALID]{Colors.RESET}" if url in valid_redirects else f"{Colors.RED}[INVALID]{Colors.RESET}"
+            print(f"  - {url} {status}")
+            
+            unique_sources = sorted(list(set(sources)))
+            for src in unique_sources:
+                # Rule Check: Only allowed on index.html (or explicitly allowed pages)
+                # User Requirement: "Other page jump buttons must point to the homepage sales card"
+                # Implication: Direct /go/ links should ideally only be on index.html
+                
+                is_home = (src == "index.html")
+                policy_mark = f"{Colors.GREEN}[HOME]{Colors.RESET}" if is_home else f"{Colors.YELLOW}[OTHER PAGE - PLEASE VERIFY]{Colors.RESET}"
+                
+                print(f"      FROM: {src} {policy_mark}")
+        
+        print(f"\n{Colors.YELLOW}[政策提示] 非首页出现的销售链接建议指向首页销售卡片 (index.html#pricing) 而非直接跳转。{Colors.RESET}")
+    else:
+        print("  - 无软路由链接")
+
     # Clean URL Report
     if clean_url_issues:
         print(f"\n{Colors.PURPLE}🧹 Clean URL 审计 ({len(clean_url_issues)}){Colors.RESET}")
@@ -475,13 +534,24 @@ def main():
         print(f"\n{Colors.GREEN}🧹 Clean URL 状态: 完美{Colors.RESET}")
 
     # External Links Report
-    print(f"\n{Colors.CYAN}🌐 外链审计 (Top 20){Colors.RESET}")
+    print(f"\n{Colors.CYAN}🌐 外链审计 (Top 50){Colors.RESET}")
     if external_links_map:
         sorted_ext = sorted(external_links_map.items(), key=lambda x: len(x[1]), reverse=True)
-        for url, sources in sorted_ext[:20]:
+        for url, sources in sorted_ext[:50]:
             print(f"  - [{len(sources)}] {url}")
-        if len(sorted_ext) > 20:
+            
+            # Show sources
+            unique_sources = sorted(list(set(sources)))
+            for src in unique_sources:
+                # Check if this source has security issue for this URL
+                is_unsafe = src in unsafe_external_links.get(url, set())
+                status_mark = f"{Colors.RED}[UNSAFE]{Colors.RESET}" if is_unsafe else f"{Colors.GREEN}[OK]{Colors.RESET}"
+                print(f"      FROM: {src} {status_mark}")
+                
+        if len(sorted_ext) > 50:
             print(f"  ... (共 {len(sorted_ext)} 个外部链接)")
+            
+        print(f"\n{Colors.YELLOW}[外链保护提示] {Colors.RED}[UNSAFE]{Colors.YELLOW} 标记表示缺少 rel=\"nofollow noopener noreferrer\" 属性。{Colors.RESET}")
     else:
         print("  - 无外部链接")
 

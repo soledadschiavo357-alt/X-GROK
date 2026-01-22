@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 
 # 1. 基础配置
 SITE_URL = "https://x-grok.top"
+SITE_DOMAIN = "x-grok.top"
 TEMPLATES_DIR = "templates"
 SOURCE_DIR = "blog"
 DEST_DIR = "blog"
@@ -35,6 +36,19 @@ def write_file(path, content):
         try:
             # Use BeautifulSoup to prettify HTML for consistent formatting
             soup = BeautifulSoup(content, "html.parser")
+            
+            # Auto-add rel attributes for SEO and security
+            for a in soup.find_all('a', href=True):
+                href = a['href']
+                
+                # 1. Soft Routing / Sales Links (Strict protection with 'sponsored')
+                if href.startswith('/go/'):
+                    a['rel'] = "nofollow sponsored noopener noreferrer"
+                
+                # 2. General External Links (Standard protection)
+                elif href.startswith('http') and SITE_DOMAIN not in href:
+                    a['rel'] = "nofollow noopener noreferrer"
+            
             content = soup.prettify()
         except Exception as e:
             print(f"Warning: Could not prettify {path}: {e}")
