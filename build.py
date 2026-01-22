@@ -673,12 +673,20 @@ def build_sitemap(posts):
     sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
     sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     
-    static_pages = ["", "about", "blog/", "sitemap"]
-    for p in static_pages:
+    # Define pages with specific frequencies and priorities
+    static_pages_config = [
+        {"loc": "", "freq": "weekly", "prio": "1.0"},
+        {"loc": "about", "freq": "monthly", "prio": "0.8"},
+        {"loc": "blog/", "freq": "weekly", "prio": "0.9"},
+        {"loc": "sitemap", "freq": "weekly", "prio": "0.5"},
+        {"loc": "policies", "freq": "monthly", "prio": "0.5"}
+    ]
+    
+    for p_conf in static_pages_config:
         sitemap_xml += f"""  <url>
-    <loc>{SITE_URL}/{p}</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <loc>{SITE_URL}/{p_conf['loc']}</loc>
+    <changefreq>{p_conf['freq']}</changefreq>
+    <priority>{p_conf['prio']}</priority>
   </url>\n"""
 
     for post in posts:
