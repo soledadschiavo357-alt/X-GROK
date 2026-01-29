@@ -89,9 +89,14 @@ def extract_metadata(filename):
         # Try to find date in text like 2026年1月5日
         date_text_match = re.search(r'(\d{4}年\d{1,2}月\d{1,2}日)', content)
         if date_text_match:
-            date_str = date_text_match.group(1) # Keep as is or parse?
+            date_str = date_text_match.group(1)
         else:
-            date_str = datetime.datetime.now().strftime("%Y-%m-%d")
+            # Try to find date in text like 📅 2026-01-12
+            date_icon_match = re.search(r'📅\s*(\d{4}-\d{2}-\d{2})', content)
+            if date_icon_match:
+                date_str = date_icon_match.group(1)
+            else:
+                date_str = datetime.datetime.now().strftime("%Y-%m-%d")
 
     # URL
     url = f"/blog/{filename.replace('.html', '')}"
