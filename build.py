@@ -161,13 +161,20 @@ def get_all_posts():
                 print(f"Error extracting metadata from {filename}: {e}")
     
     def parse_date(d):
+        if not d:
+            return datetime.datetime.min
         try:
             return datetime.datetime.strptime(d, "%Y-%m-%d")
-        except:
+        except ValueError:
             try:
                 return datetime.datetime.strptime(d, "%Y年%m月%d日")
-            except:
-                return datetime.datetime.min
+            except ValueError:
+                # Try handling single digit month/day just in case
+                try:
+                    return datetime.datetime.strptime(d, "%Y年%-m月%-d日")
+                except ValueError:
+                    print(f"Warning: Could not parse date '{d}', using min date.")
+                    return datetime.datetime.min
     
     posts.sort(key=lambda x: parse_date(x['date']), reverse=True)
     return posts
