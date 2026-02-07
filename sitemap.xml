@@ -26,6 +26,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://x-grok.top/blog/what-is-grok</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://x-grok.top/blog/grok-ai-companion-guide</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://x-grok.top/blog/grok-api-usage-guide</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
