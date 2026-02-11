@@ -26,6 +26,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://x-grok.top/blog/what-is-grok-beta</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://x-grok.top/blog/grok-education-guide</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://x-grok.top/blog/what-is-grok</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>

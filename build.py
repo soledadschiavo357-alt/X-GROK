@@ -550,6 +550,84 @@ def build_policies():
     print("policies.html built.")
     return 1
 
+# 3.8 智能推荐算法
+def get_post_category(post):
+    """统一的分类逻辑"""
+    title = post['title'].lower()
+    if "评测" in title:
+        return "深度评测"
+    elif "指南" in title or "怎么" in title or "教程" in title:
+        return "使用指南"
+    elif "支付" in title or "购买" in title or "充值" in title:
+        return "支付方案"
+    elif "对比" in title or "vs" in title:
+        return "差异对比"
+    return "教程"
+
+PILLAR_POSTS = []
+
+def recommend_posts(current_post, all_posts, ref_counts):
+        """
+        智能推荐算法 (Smart Recommendation)
+        优先级逻辑：
+        1. Tags Overlap (Tags匹配度) - 最高优先级
+        2. Incoming Link Count (引用次数) - 均衡调节
+        3. Date (发布时间) - 新鲜度
+        """
+        candidates = []
+        current_cat = get_post_category(current_post)
+        current_keywords = set(re.findall(r'\w+', current_post['title'].lower()))
+        
+        # 预处理：计算当前文章的时间戳
+        def get_timestamp(date_str):
+            try:
+                return datetime.datetime.strptime(date_str, "%Y-%m-%d").timestamp()
+            except:
+                return 0
+        
+        for p in all_posts:
+            if p['filename'] == current_post['filename']:
+                continue
+                
+            # --- 1. 相关性得分 (Base Score) ---
+            relevance_score = 0
+            
+            # 分类匹配 (Tag Overlap - Category)
+            if get_post_category(p) == current_cat:
+                relevance_score += 10
+                
+            # 关键词匹配 (Tag Overlap - Keywords)
+            p_keywords = set(re.findall(r'\w+', p['title'].lower()))
+            common_words = current_keywords.intersection(p_keywords)
+            common_words = {w for w in common_words if w not in ['grok', 'ai', '使用', '指南', '教程', '怎么', '是什么']}
+            relevance_score += len(common_words) * 5  # 提高关键词权重
+            
+            # --- 2. 引用均衡得分 (Balancing Score) ---
+            # 引用次数越少，得分越高。非线性惩罚，避免初期波动太大
+            current_refs = ref_counts.get(p['filename'], 0)
+            balance_score = - (current_refs * 3) 
+            
+            # --- 3. 时间新鲜度得分 (Freshness Score) ---
+            # 归一化时间戳，让其影响在 0-2 分之间
+            try:
+                ts = get_timestamp(p['date'])
+                # 假设最近一年的文章
+                freshness_score = (ts / 1700000000) * 2 
+            except:
+                freshness_score = 0
+                
+            # --- 最终总分 ---
+            # 权重：相关性 > 均衡性 > 新鲜度
+            final_score = relevance_score + balance_score + freshness_score + random.random() * 0.5
+            
+            candidates.append((final_score, p))
+        
+        # 按总分降序排序
+        candidates.sort(key=lambda x: x[0], reverse=True)
+        
+        # 返回前4篇
+        return [c[1] for c in candidates[:4]]
+
 # 4. 文章详情页构建
 def build_posts_pages(posts):
     print("Building Post Pages...")
@@ -557,10 +635,17 @@ def build_posts_pages(posts):
     sidebar_card = read_file(SIDEBAR_CARD_TEMPLATE)
     related_template = read_file(RELATED_POSTS_TEMPLATE)
     
+    # 初始化引用计数器
+    ref_counts = {p['filename']: 0 for p in posts}
+    
     count = 0
     for post in posts:
-        other_posts = [p for p in posts if p['filename'] != post['filename']]
-        related_sample = random.sample(other_posts, min(len(other_posts), 4))
+        # 使用智能推荐算法替代随机采样
+        related_sample = recommend_posts(post, posts, ref_counts)
+        
+        # 更新引用计数
+        for rp in related_sample:
+            ref_counts[rp['filename']] += 1
         
         related_items_html = ""
         for rp in related_sample:
