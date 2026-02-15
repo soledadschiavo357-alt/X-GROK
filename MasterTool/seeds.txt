@@ -5,9 +5,9 @@ xAI
 Grok 账号
 Grok 注册
 Grok 充值
-Grok 价格
+Grok 代充
 Grok 教程
-Grok API
+Grok 购买
 Grok Deep Research
 Grok Imagine
 Grok vs ChatGPT

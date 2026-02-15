@@ -68,10 +68,20 @@ def extract_metadata(filename):
     content = read_file(path)
     
     # Title
+    # Try to find H1 first for the rich title (with HTML tags)
+    h1_match = re.search(r'<h1.*?>(.*?)</h1>', content, re.DOTALL)
     title_match = re.search(r'<title>(.*?)</title>', content, re.DOTALL)
-    if not title_match:
-        title_match = re.search(r'<h1.*?>(.*?)</h1>', content, re.DOTALL)
-    title = title_match.group(1).split('|')[0].strip() if title_match else "Untitled"
+    
+    if h1_match:
+        raw_title = h1_match.group(1).strip()
+    elif title_match:
+        raw_title = title_match.group(1).split('|')[0].strip()
+    else:
+        raw_title = "Untitled"
+        
+    # Clean title for meta tags and <title> element
+    clean_title = re.sub(r'<[^>]+>', '', raw_title).strip()
+    clean_title = re.sub(r'\s+', ' ', clean_title) # Normalize whitespace
     
     # Description
     # Handle both orders and potential newlines
@@ -137,7 +147,8 @@ def extract_metadata(filename):
     processed_content = article_content
 
     return {
-        "title": title,
+        "title": raw_title,
+        "clean_title": clean_title,
         "description": description,
         "date": date_str,
         "url": url,
@@ -235,7 +246,7 @@ def build_home(posts):
     full_html = inject_layout_vars(full_html, "assets/")
     
     home_title = "Grok会员购买与代充平台 - Grok账号开通/共享/独享成品号 | X-Grok.top"
-    home_desc = "专业Grok会员代充与账号购买平台。提供Grok会员独享成品号、Grok会员共享账号(低至¥70)、X Premium蓝标代开。解决国内Grok会员怎么买、信用卡支付失败问题。"
+    home_desc = "专业Grok会员代充与账号购买平台。提供Grok 4.1会员独享成品号、Grok会员共享账号(低至¥70/月)、X Premium蓝标认证代开服务。完美解决国内用户Grok会员怎么买、Visa/Mastercard信用卡支付失败等问题，支持支付宝/微信支付，24小时自动发货，安全稳定。"
     home_url = SITE_URL + "/"
     home_image = SITE_URL + "/assets/og-cover.png"
     
@@ -509,7 +520,7 @@ def build_about():
     full_html = inject_layout_vars(full_html, "assets/")
     
     page_title = "关于我们 - X-Grok.top | 专业的 AI 服务提供商"
-    page_desc = "X-Grok.top 致力于消除 AI 使用门槛，为国内用户提供安全、稳定、合规的 Grok 4.1 会员账号与代充服务。"
+    page_desc = "X-Grok.top 是一家专业的 AI 服务提供商，致力于消除国内用户使用 Grok AI 的门槛。我们提供安全、稳定、合规的 Grok 4.1 会员账号购买、代充与 X Premium 蓝标认证服务。通过本地化支付方式（支付宝/微信），让您轻松解锁马斯克旗下最强 AI 的全部潜力。"
     page_url = SITE_URL + "/about"
     
     full_html = full_html.replace("{{ title }}", page_title)
@@ -535,7 +546,7 @@ def build_policies():
     full_html = inject_layout_vars(full_html, "assets/")
     
     page_title = "服务条款与隐私政策 | X-Grok.top"
-    page_desc = "X-Grok.top 的服务条款、隐私政策及退款说明。我们致力于为您提供安全、透明的 Grok 会员服务。"
+    page_desc = "X-Grok.top 的服务条款、隐私政策及退款说明。我们承诺保障您的账号安全与个人隐私，提供透明的服务流程与售后保障。了解我们的退款政策、账号使用规范及数据保护措施，确保您在购买 Grok 会员服务时享有完整的权益保障与安心体验。"
     page_url = SITE_URL + "/policies"
     
     full_html = full_html.replace("{{ title }}", page_title)
@@ -597,7 +608,7 @@ def recommend_posts(current_post, all_posts, ref_counts):
                 relevance_score += 10
                 
             # 关键词匹配 (Tag Overlap - Keywords)
-            p_keywords = set(re.findall(r'\w+', p['title'].lower()))
+            p_keywords = set(re.findall(r'\w+', p['clean_title'].lower()))
             common_words = current_keywords.intersection(p_keywords)
             common_words = {w for w in common_words if w not in ['grok', 'ai', '使用', '指南', '教程', '怎么', '是什么']}
             relevance_score += len(common_words) * 5  # 提高关键词权重
@@ -678,23 +689,23 @@ def build_posts_pages(posts):
         # Inject Layout Vars (Subdirectory)
         full_html = inject_layout_vars(full_html, "../assets/")
         
-        post_title = f"{post['title']} | X-Grok.Top"
+        post_title = f"{post['clean_title']} | X-Grok.Top"
         post_url = f"{SITE_URL}{post['url']}"
         full_html = full_html.replace("{{ title }}", post_title)
         full_html = full_html.replace("{{ description }}", post['description'])
         full_html = full_html.replace("{{ canonical }}", post_url)
         
         post_head_meta = textwrap.dedent(f'''
-        <meta name="keywords" content="{post['title']}, Grok教程, Grok会员, X-Grok">
+        <meta name="keywords" content="{post['clean_title']}, Grok教程, Grok会员, X-Grok">
         <meta name="robots" content="index, follow">
         <meta name="theme-color" content="#000000">
         <meta property="og:type" content="article">
-        <meta property="og:title" content="{post['title']}">
+        <meta property="og:title" content="{post['clean_title']}">
         <meta property="og:description" content="{post['description']}">
         <meta property="og:url" content="{post_url}">
         <meta property="og:image" content="{post['image_url']}">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="{post['title']}">
+        <meta name="twitter:title" content="{post['clean_title']}">
         <meta name="twitter:description" content="{post['description']}">
         <meta name="twitter:image" content="{post['image_url']}">
         ''').strip()
@@ -703,7 +714,7 @@ def build_posts_pages(posts):
         article_schema = {
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": post['title'],
+          "headline": post['clean_title'],
           "image": post['image_url'],
           "author": { "@type": "Organization", "name": "X-Grok Team" },
           "publisher": { "@type": "Organization", "name": "X-Grok.top" },
@@ -757,7 +768,7 @@ def build_sitemap(posts):
         sitemap_list_html += f'''
         <li class="sitemap-item">
             <a href="{post["url"]}">
-                <span class="block truncate">{post["title"]}</span>
+                <span class="block truncate">{post["clean_title"]}</span>
                 <span class="text-xs text-slate-500 mt-1 block">{post["date"]}</span>
             </a>
         </li>
@@ -773,7 +784,7 @@ def build_sitemap(posts):
     page_url = SITE_URL + "/sitemap"
     
     full_html = full_html.replace("{{ title }}", page_title)
-    full_html = full_html.replace("{{ description }}", "X-Grok.top 网站全站地图索引。快速查找 Grok 会员购买、使用教程、API 评测及常见问题解答等所有页面链接。")
+    full_html = full_html.replace("{{ description }}", "X-Grok.top 网站全站地图索引。一站式快速查找 Grok 4.1 会员购买渠道、账号代充服务、使用教程指南、API 深度评测、DeepSearch 技巧及常见问题解答等所有页面链接，助您高效浏览并获取所需信息。")
     full_html = full_html.replace("{{ canonical }}", page_url)
     full_html = full_html.replace("{{ head_meta }}", '<meta name="robots" content="index, follow">')
     full_html = full_html.replace("{{ schema }}", "")

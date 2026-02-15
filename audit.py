@@ -266,8 +266,8 @@ def audit_file(file_path):
         warnings.append(f"[{file_path}] [SEO WARNING] Thin Content: Title 缺失或过短 (<=5 chars)")
         
     desc = soup.find("meta", attrs={"name": "description"})
-    if not desc or not desc.get("content") or len(desc.get("content").strip()) <= 50:
-         warnings.append(f"[{file_path}] [SEO WARNING] Thin Content: Description 缺失或过短 (<=50 chars)")
+    if not desc or not desc.get("content") or len(desc.get("content").strip()) <= 100:
+         warnings.append(f"[{file_path}] [SEO WARNING] Thin Content: Description 缺失或过短 (<=100 chars)")
 
     # --- Canonical Check ---
     canonical = soup.find("link", attrs={"rel": "canonical"})
