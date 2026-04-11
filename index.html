@@ -200,11 +200,11 @@
   </meta>
  </head>
  <body class="ambient bg-black text-slate-100 antialiased pb-20 md:pb-0">
-  <div class="pointer-events-none fixed -z-10 top-[-10rem] left-[-6rem] w-[30rem] h-[30rem] rounded-full bg-purple-600/20 blur-[120px] animate-aurora">
+  <div class="pointer-events-none fixed -z-10 top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-slate-500/10 blur-[120px] animate-aurora">
   </div>
-  <div class="pointer-events-none fixed -z-10 top-[20%] right-[-8rem] w-[26rem] h-[26rem] rounded-full bg-cyan-500/20 blur-[120px] animate-aurora">
+  <div class="pointer-events-none fixed -z-10 top-[20%] right-[-10%] w-[35%] h-[35%] rounded-full bg-gold/10 blur-[120px] animate-aurora" style="animation-delay: 2s;">
   </div>
-  <div class="pointer-events-none fixed -z-10 bottom-[-10rem] right-[-6rem] w-[34rem] h-[34rem] rounded-full bg-amber-500/15 blur-[120px] animate-aurora">
+  <div class="pointer-events-none fixed -z-10 bottom-[-10%] left-[20%] w-[45%] h-[45%] rounded-full bg-slate-800/20 blur-[120px] animate-aurora" style="animation-delay: 4s;">
   </div>
   <header class="fixed top-4 left-0 right-0 z-50 transition-all duration-300">
    <div class="max-w-7xl mx-auto px-4">
@@ -299,22 +299,20 @@
     </div>
     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-gold/5 rounded-full blur-[100px] pointer-events-none opacity-30">
     </div>
-    <div class="absolute inset-0 bg-grid opacity-[0.15] pointer-events-none z-0">
+    <div class="absolute inset-0 bg-grid opacity-[0.15] pointer-events-none z-0" style="-webkit-mask-image: radial-gradient(ellipse at center, black 10%, transparent 70%); mask-image: radial-gradient(ellipse at center, black 10%, transparent 70%);">
     </div>
     <div class="relative max-w-7xl mx-auto px-4 flex flex-col items-center text-center z-10">
-     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] md:text-xs font-mono text-gold tracking-wide backdrop-blur-md mb-8 animate-fade-in-up shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:border-gold/30 transition-colors cursor-default">
-      <span class="relative flex h-2 w-2">
-       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75">
+     <div class="relative inline-flex items-center justify-center p-[1px] mb-8 animate-fade-in-up group rounded-full overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.15)]">
+      <div class="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,#000000_0%,#D4AF37_50%,#000000_100%)] animate-[spin_3s_linear_infinite] group-hover:bg-[conic-gradient(from_90deg_at_50%_50%,#000000_0%,#FCD34D_50%,#000000_100%)] transition-colors"></div>
+      <div class="relative flex items-center gap-2 px-4 py-1.5 rounded-full bg-black text-[11px] md:text-xs font-mono text-gold tracking-wide backdrop-blur-xl cursor-default w-full h-full">
+       <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
        </span>
-       <span class="relative inline-flex rounded-full h-2 w-2 bg-gold">
-       </span>
-      </span>
-      <span class="font-bold">
-       NEW
-      </span>
-      <span class="w-px h-3 bg-white/20 mx-2">
-      </span>
-      搭载 Grok 4.1 最新 Multi-Agent 系统
+       <span class="font-bold text-white">NEW</span>
+       <span class="w-px h-3 bg-white/20 mx-1"></span>
+       <span class="text-slate-300">搭载 <strong class="text-white">Grok 4.2</strong> 最新 Multi-Agent 系统</span>
+      </div>
      </div>
      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6 animate-fade-in-up delay-100 drop-shadow-2xl">
       <span class="block md:inline text-transparent bg-clip-text bg-gradient-to-b from-[#FCD34D] to-[#B45309]">
@@ -330,7 +328,7 @@
      <p class="text-lg md:text-xl text-slate-400 font-medium mb-10 animate-fade-in-up delay-200 max-w-3xl mx-auto leading-relaxed">
       助您无门槛解锁
       <span class="text-slate-200 font-bold">
-       Grok 4.1
+       Grok 4.2
       </span>
       博士级 AI 算力，
       <br class="hidden md:block"/>
@@ -419,38 +417,30 @@
        <div class="mt-2 text-xs text-green-400 font-mono bg-green-400/10 px-2 py-1 rounded inline-block">
         用码 [xmpick] 立减 7%
        </div>
-       <button class="mt-2 inline-flex items-center gap-1 px-2 py-1 rounded border border-white/20 text-xs text-slate-200 hover:bg-white/10 copy-code-btn" data-code="xmpick" type="button">
+       <button class="mt-2 inline-flex items-center gap-1 px-2 py-1 rounded border border-white/20 text-xs text-slate-200 hover:bg-white/10 transition-colors copy-code-btn" data-code="xmpick" type="button">
         复制优惠码
        </button>
        <ul class="mt-6 space-y-3 text-sm text-slate-300">
         <li class="flex gap-2 items-center">
-         <span class="text-green-400">
-          ✅
-         </span>
+         <svg class="w-4 h-4 text-green-400 drop-shadow-[0_0_8px_rgba(74,222,128,0.5)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
          <span>
-          解锁 Grok 4.1 满血算力
+          解锁 Grok 4.2 满血算力
          </span>
         </li>
         <li class="flex gap-2 items-center">
-         <span class="text-slate-400">
-          ⚡
-         </span>
+         <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
          <span>
           适合开发者测试 / 尝鲜提问
          </span>
         </li>
         <li class="flex gap-2 items-center opacity-80" title="不支持发推特，仅用于AI对话">
-         <span class="text-slate-400">
-          🛡️
-         </span>
+         <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
          <span>
           纯净对话模式 (无社交干扰)
          </span>
         </li>
         <li class="flex gap-2 items-center opacity-70 text-xs">
-         <span class="text-orange-400">
-          ⚠️
-         </span>
+         <svg class="w-4 h-4 text-orange-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
          <span>
           公用工作台 (历史记录公开)
          </span>
@@ -460,7 +450,8 @@
         购买体验版
        </a>
       </div>
-      <div class="relative p-8 rounded-2xl border border-gold/30 bg-gradient-to-b from-gold/10 to-black backdrop-blur-xl shadow-2xl transform md:scale-110 z-10">
+      <div class="relative p-8 rounded-2xl border border-gold/30 bg-gradient-to-b from-gold/10 to-black backdrop-blur-xl shadow-2xl transform md:scale-110 z-10 group">
+       <div class="absolute inset-[-1px] rounded-2xl bg-gradient-to-b from-gold/50 to-transparent opacity-50 group-hover:opacity-100 animate-[pulse_3s_ease-in-out_infinite] pointer-events-none -z-10 transition-opacity"></div>
        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-lg shadow-gold/20">
         Most Popular
        </div>
@@ -468,7 +459,7 @@
         Grok会员独享成品号
        </h3>
        <div class="mt-4 flex items-baseline gap-1">
-        <span class="text-4xl font-extrabold text-gold">
+        <span class="text-4xl font-extrabold text-gold drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
          ¥250
         </span>
         <span class="text-sm text-slate-400">
@@ -485,14 +476,12 @@
         </strong>
         (93折)
        </div>
-       <button class="mt-2 inline-flex items-center gap-1 px-2 py-1 rounded border border-gold/30 text-xs text-gold hover:bg-gold/10 copy-code-btn" data-code="xmpick" type="button">
+       <button class="mt-2 inline-flex items-center gap-1 px-2 py-1 rounded border border-gold/30 text-xs text-gold hover:bg-gold/10 transition-colors copy-code-btn" data-code="xmpick" type="button">
         复制优惠码
        </button>
        <ul class="mt-8 space-y-4 text-sm text-slate-200">
         <li class="flex gap-3 items-start">
-         <span class="text-gold text-lg">
-          👑
-         </span>
+         <svg class="w-5 h-5 text-gold drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
          <span>
           <strong>
            赠送 X Premium 蓝标
@@ -504,25 +493,19 @@
          </span>
         </li>
         <li class="flex gap-3 items-center">
-         <span class="text-gold text-lg">
-          🔒
-         </span>
+         <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
          <span>
           一人一号 · 独立邮箱 · 绝对隐私
          </span>
         </li>
         <li class="flex gap-3 items-center">
-         <span class="text-gold text-lg">
-          🧠
-         </span>
+         <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
          <span>
           完整功能 (DeepSearch / 生图)
          </span>
         </li>
         <li class="flex gap-3 items-center">
-         <span class="text-gold text-lg">
-          🛡️
-         </span>
+         <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
          <span>
           资产掌控 (支持改密/换绑手机)
          </span>
@@ -556,37 +539,30 @@
        <div class="mt-2 text-xs text-blue-400 font-mono bg-blue-400/10 px-2 py-1 rounded inline-block">
         用码 [xmpick] 立减 7%
        </div>
-       <button class="mt-2 inline-flex items-center gap-1 px-2 py-1 rounded border border-white/20 text-xs text-slate-200 hover:bg-white/10 copy-code-btn" data-code="xmpick" type="button">
+       <button class="mt-2 inline-flex items-center gap-1 px-2 py-1 rounded border border-white/20 text-xs text-slate-200 hover:bg-white/10 transition-colors copy-code-btn" data-code="xmpick" type="button">
         复制优惠码
        </button>
        <ul class="mt-6 space-y-3 text-sm text-slate-300">
         <li class="flex gap-2 items-center">
-         <span class="text-blue-400">
-          💎
-         </span>
+         <svg class="w-4 h-4 text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.5)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
          <span>
           无缝升级 (保留所有关注/历史)
          </span>
         </li>
         <li class="flex gap-2 items-center">
-         <span class="text-slate-300">
-          🚀
-         </span>
+         <svg class="w-4 h-4 text-slate-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
          <span>
           正规渠道开通 (1-24h 极速到账)
          </span>
         </li>
         <li class="flex gap-2 items-center">
-         <span class="text-slate-300">
-         </span>
+         <svg class="w-4 h-4 text-slate-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
          <span>
           解决国内卡拒付 / 避免风控锁号
          </span>
         </li>
         <li class="flex gap-2 items-center">
-         <span class="text-slate-300">
-          ♾️
-         </span>
+         <svg class="w-4 h-4 text-slate-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
          <span>
           支持老号无限续费
          </span>
@@ -599,156 +575,205 @@
      </div>
     </div>
    </section>
-   <section class="py-12" id="cards-core">
+   <section class="py-16" id="cards-core">
     <div class="max-w-6xl mx-auto px-4">
-     <div class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6 reveal-soft">
-       SuperGrok 核心功能 · 搭载 Grok 4 技术
+     <div class="text-center mb-12 reveal-soft">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+       SuperGrok 核心功能 · 搭载 Grok 4.2 技术
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 interactive-zone reveal-soft">
-       <div class="card p-4">
-        <div class="text-2xl transition-transform">
-         🧠
-        </div>
-        <div class="mt-2 font-semibold">
-         Grok 4 超人级推理
-        </div>
-        <p class="mt-1 text-slate-300">
-         GPQA 87-88%，AIME 95%，博士级学术智能。
-        </p>
+      <p class="text-slate-400">专为深度搜索、高阶推理与创作者设计的下一代 AI 工具</p>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 interactive-zone reveal-soft">
+      
+      <!-- DeepSearch -->
+      <div class="card p-6 md:col-span-2 flex flex-col justify-between group overflow-hidden">
+       <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-500/10 blur-[50px] rounded-full group-hover:bg-blue-500/20 transition-colors"></div>
+       <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition-transform">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
        </div>
-       <div class="card p-4">
-        <div class="text-2xl transition-transform">
-         👥
-        </div>
-        <div class="mt-2 font-semibold">
-         多智能体系统
-        </div>
-        <p class="mt-1 text-slate-300">
-         学习小组式协作，多角色交叉验证，答案更准。
-        </p>
-       </div>
-       <div class="card p-4">
-        <div class="text-2xl transition-transform">
-         🎙️
-        </div>
-        <div class="mt-2 font-semibold">
-         高级语音模式
-        </div>
-        <p class="mt-1 text-slate-300">
-         Eve 情感语音，支持耳语与唱歌，人性化交互。
-        </p>
-       </div>
-       <div class="card p-4">
-        <div class="text-2xl transition-transform">
-         🔍
-        </div>
-        <div class="mt-2 font-semibold">
-         DeepSearch 深度搜索
-        </div>
-        <p class="mt-1 text-slate-300">
-         实时访问 X 平台与全网数据，毫秒级新闻捕捉。
-        </p>
-       </div>
-       <div class="card p-4">
-        <div class="text-2xl transition-transform">
-         🎨
-        </div>
-        <div class="mt-2 font-semibold">
-         Aurora 图像模型
-        </div>
-        <p class="mt-1 text-slate-300">
-         集成 FLUX 级生图，支持高质量图像创作。
-        </p>
-       </div>
-       <div class="card p-4">
-        <div class="text-2xl transition-transform">
-         🌐
-        </div>
-        <div class="mt-2 font-semibold">
-         X 平台深度集成
-        </div>
-        <p class="mt-1 text-slate-300">
-         舆论趋势、用户观点与实时讨论，形成情报面。
-        </p>
-       </div>
-       <div class="card p-4">
-        <div class="text-2xl transition-transform">
-         📈
-        </div>
-        <div class="mt-2 font-semibold">
-         128K 上下文
-        </div>
-        <p class="mt-1 text-slate-300">
-         长文档与复杂任务处理，上下文记忆更稳定。
-        </p>
-       </div>
-       <div class="card p-4">
-        <div class="text-2xl transition-transform">
-         ⚡
-        </div>
-        <div class="mt-2 font-semibold">
-         训练与强化
-        </div>
-        <p class="mt-1 text-slate-300">
-         更大训练数据与强化学习，系统性性能提升。
-        </p>
+       <div>
+        <h3 class="text-xl font-bold text-white mb-2">DeepSearch 深度搜索</h3>
+        <p class="text-slate-400 leading-relaxed">实时访问 X (Twitter) 平台与全网数据，毫秒级捕捉全球新闻与舆论趋势。告别传统 AI 的信息时滞，用全网最快的数据流为您提供深度的洞察与情报面。</p>
        </div>
       </div>
+
+      <!-- Grok 4.2 Reasoning -->
+      <div class="card p-6 md:row-span-2 flex flex-col group overflow-hidden">
+       <div class="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+       <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center mb-6 text-gold group-hover:scale-110 transition-transform">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+       </div>
+       <div class="flex-grow">
+        <h3 class="text-xl font-bold text-white mb-2">Grok 4.2 超人级推理</h3>
+        <p class="text-slate-400 leading-relaxed mb-6">突破单体模型极限，GPQA 达到 87-88%，AIME 数学推理高达 95%。具备博士级的学术智能与复杂的长代码生成能力。</p>
+        <div class="space-y-3">
+         <div class="flex items-center justify-between text-sm">
+          <span class="text-slate-400">AIME 准确率</span>
+          <span class="text-gold font-mono font-bold">95%</span>
+         </div>
+         <div class="w-full bg-black/50 rounded-full h-1.5"><div class="bg-gold h-1.5 rounded-full w-[95%]"></div></div>
+         <div class="flex items-center justify-between text-sm mt-3">
+          <span class="text-slate-400">GPQA 准确率</span>
+          <span class="text-gold font-mono font-bold">87%</span>
+         </div>
+         <div class="w-full bg-black/50 rounded-full h-1.5"><div class="bg-gold h-1.5 rounded-full w-[87%]"></div></div>
+        </div>
+       </div>
+      </div>
+
+      <!-- Aurora -->
+      <div class="card p-6 flex flex-col justify-between group overflow-hidden">
+       <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+       </div>
+       <div>
+        <h3 class="text-lg font-bold text-white mb-1">Aurora 图像模型</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">内置 FLUX 级别的高质量多模态生成引擎，支持极其细腻的生图创作。</p>
+       </div>
+      </div>
+
+      <!-- Multi Agent -->
+      <div class="card p-6 flex flex-col justify-between group overflow-hidden">
+       <div class="w-10 h-10 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4 text-green-400 group-hover:scale-110 transition-transform">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+       </div>
+       <div>
+        <h3 class="text-lg font-bold text-white mb-1">多智能体系统</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">采用学习小组式协作，由分析、代码、创意等多角色交叉验证，消除 AI 幻觉。</p>
+       </div>
+      </div>
+
+      <!-- Woke-Free -->
+      <div class="card p-6 md:col-span-2 flex flex-col justify-between group overflow-hidden">
+       <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-red-500/10 blur-[50px] rounded-full group-hover:bg-red-500/20 transition-colors"></div>
+       <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4 text-red-400 group-hover:scale-110 transition-transform">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+       </div>
+       <div>
+        <h3 class="text-xl font-bold text-white mb-2">无过滤模式 (Woke-Free)</h3>
+        <p class="text-slate-400 leading-relaxed">拒绝过度政治正确与内容审查。Grok 提供最真实、直接的观点，配备 Fun 模式与高级语音交互，感受更具人性化的 AI 伴侣体验。</p>
+       </div>
+      </div>
+
      </div>
     </div>
    </section>
-   <section class="py-12" id="cards-compare">
+   <section class="py-16" id="cards-compare">
     <div class="max-w-6xl mx-auto px-4">
-     <div class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6 reveal-soft">
+     <div class="rounded-3xl border border-white/10 bg-slate-900/50 backdrop-blur-2xl p-8 md:p-10 shadow-[0_0_40px_rgba(0,0,0,0.3)] relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[100px] pointer-events-none opacity-50"></div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white reveal-soft relative z-10">
        SuperGrok 与其他 AI 对比
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 reveal-soft">
-       <div class="p-4 rounded-xl border border-white/10 bg-white/5">
-        <div class="text-2xl">
-         🟧
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 reveal-soft relative z-10">
+       <!-- vs ChatGPT Plus -->
+       <div class="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300 group overflow-hidden relative flex flex-col">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex items-center gap-4 mb-6 relative z-10">
+         <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.15)] group-hover:scale-110 transition-transform shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+         </div>
+         <h3 class="text-xl font-bold text-white leading-tight">
+          vs ChatGPT Plus
+         </h3>
         </div>
-        <div class="mt-2 font-semibold">
-         vs ChatGPT Plus
-        </div>
-        <p class="mt-1 text-slate-300">
-         实时数据 vs 训练截止；多智能体协作 vs 单一模型。
-        </p>
+        <ul class="space-y-4 text-sm text-slate-400 flex-grow relative z-10">
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">实时情报：</strong>直接接入 X (Twitter) 数据流，无训练截止日期限制。</span>
+         </li>
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">言论自由：</strong>Woke-Free 无过滤模式，拒绝过度政治正确。</span>
+         </li>
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">底层架构：</strong>多智能体交叉辩论 vs ChatGPT 单体模型盲目输出。</span>
+         </li>
+        </ul>
        </div>
-       <div class="p-4 rounded-xl border border-white/10 bg-white/5">
-        <div class="text-2xl">
-         🔥
+       
+       <!-- vs Claude Pro -->
+       <div class="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300 group overflow-hidden relative flex flex-col">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex items-center gap-4 mb-6 relative z-10">
+         <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.15)] group-hover:scale-110 transition-transform shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+         </div>
+         <h3 class="text-xl font-bold text-white leading-tight">
+          vs Claude Pro
+         </h3>
         </div>
-        <div class="mt-2 font-semibold">
-         vs Claude Pro
-        </div>
-        <p class="mt-1 text-slate-300">
-         深度集成与无过滤；更强创意与实时性。
-        </p>
+        <ul class="space-y-4 text-sm text-slate-400 flex-grow relative z-10">
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-purple-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">幽默人性：</strong>独家 "Fun Mode" 与 Eve 情感语音，摆脱枯燥 AI 味。</span>
+         </li>
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-purple-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">原生生图：</strong>内置 FLUX 级别的高质量 Aurora 图像生成引擎。</span>
+         </li>
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-purple-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">社交闭环：</strong>深度绑定全球最大社交媒体，实时洞察全网舆论趋势。</span>
+         </li>
+        </ul>
        </div>
-       <div class="p-4 rounded-xl border border-white/10 bg-white/5">
-        <div class="text-2xl">
-         🎯
+
+       <!-- Grok 4.2 Performance -->
+       <div class="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300 group overflow-hidden relative flex flex-col">
+        <div class="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex items-center gap-4 mb-6 relative z-10">
+         <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold shadow-[0_0_15px_rgba(212,175,55,0.15)] group-hover:scale-110 transition-transform shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+         </div>
+         <h3 class="text-xl font-bold text-white leading-tight">
+          Grok 4.2 性能优势
+         </h3>
         </div>
-        <div class="mt-2 font-semibold">
-         Grok 4 性能优势
-        </div>
-        <p class="mt-1 text-slate-300">
-         GPQA 87-88%，AIME 95%，博士级学术水平。
-        </p>
+        <ul class="space-y-4 text-sm text-slate-400 flex-grow relative z-10">
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">AIME 95%：</strong>数学与逻辑推理霸榜，碾压同级别竞争对手。</span>
+         </li>
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">GPQA 87%：</strong>具备博士级专业领域的超强学术答疑能力。</span>
+         </li>
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">零幻觉架构：</strong>垂直专家 Agent 实时验证，提供极高确定性输出。</span>
+         </li>
+        </ul>
        </div>
-       <div class="p-4 rounded-xl border border-white/10 bg-white/5">
-        <div class="text-2xl">
-         🚀
+
+       <!-- Unique Value -->
+       <div class="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300 group overflow-hidden relative flex flex-col">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex items-center gap-4 mb-6 relative z-10">
+         <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.15)] group-hover:scale-110 transition-transform shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+         </div>
+         <h3 class="text-xl font-bold text-white leading-tight">
+          独家附赠价值
+         </h3>
         </div>
-        <div class="mt-2 font-semibold">
-         独特价值
-        </div>
-        <p class="mt-1 text-slate-300">
-         多智能体协作解决复杂问题，适合创作者与研究者。
-        </p>
+        <ul class="space-y-4 text-sm text-slate-400 flex-grow relative z-10">
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-blue-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">赠蓝V认证：</strong>购买即享 X Premium 蓝标权限 (价值 $16/月)。</span>
+         </li>
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-blue-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">创作者特权：</strong>解锁长视频上传、推文编辑与巨额流量扶持。</span>
+         </li>
+         <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-blue-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span><strong class="text-slate-200">资产绝对安全：</strong>一人一号独立环境，支持换绑手机与密码。</span>
+         </li>
+        </ul>
        </div>
+
       </div>
      </div>
     </div>
@@ -756,174 +781,180 @@
    <section class="py-16" id="features">
     <div class="max-w-6xl mx-auto px-4">
      <h2 class="sr-only">
-      Grok 4.1 核心优势
+      Grok 4.2 核心优势
      </h2>
      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-soft">
-      <div class="md:col-span-2 p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl bg-noise transition-transform hover:scale-[1.02]">
-       <div class="flex items-center justify-between mb-4">
-        <h3 class="text-xl md:text-2xl font-bold">
-         博士级学术智能
-        </h3>
-        <svg class="text-gold" fill="none" height="28" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
-         <path d="M12 3l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" stroke="currentColor" stroke-width="1.5">
-         </path>
-        </svg>
-       </div>
-       <div class="flex flex-wrap gap-6">
-        <div class="text-4xl font-mono text-gold">
-         AIME 95%
+      <div class="md:col-span-2 p-8 rounded-3xl border border-white/10 bg-slate-900/50 backdrop-blur-2xl shadow-[0_0_40px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+       <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-gold/20 transition-colors duration-700"></div>
+       <div class="relative z-10 flex flex-col h-full justify-between">
+        <div class="flex items-center justify-between mb-8">
+         <h3 class="text-2xl md:text-3xl font-bold text-white">
+          博士级学术智能
+         </h3>
+         <div class="w-12 h-12 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+          <svg fill="none" height="28" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 3l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" stroke="currentColor" stroke-width="1.5"></path>
+          </svg>
+         </div>
         </div>
-        <div class="text-4xl font-mono text-gold">
-         GPQA 87%
+        <div class="flex flex-wrap gap-8 mb-6">
+         <div>
+          <div class="text-sm text-slate-400 mb-1 uppercase tracking-wider font-bold">AIME</div>
+          <div class="text-5xl font-mono text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200 font-extrabold drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+           95<span class="text-3xl">%</span>
+          </div>
+         </div>
+         <div class="w-px bg-white/10"></div>
+         <div>
+          <div class="text-sm text-slate-400 mb-1 uppercase tracking-wider font-bold">GPQA</div>
+          <div class="text-5xl font-mono text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200 font-extrabold drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+           87<span class="text-3xl">%</span>
+          </div>
+         </div>
         </div>
+        <p class="text-slate-300 leading-relaxed text-lg">
+         100倍训练数据，超人级推理能力，吊打传统大模型。多个 AI 独立分析，学习小组式协作与交叉验证，极大降低幻觉率。
+        </p>
        </div>
-       <p class="mt-4 text-slate-300">
-        100倍训练数据，超人级推理能力，吊打 GPT-4。多个 AI 独立分析，学习小组式协作与交叉验证。
-       </p>
       </div>
-      <div class="p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl bg-noise transition-transform hover:scale-[1.02]">
-       <div class="flex items-center gap-3 mb-3">
-        <svg class="text-gold" fill="none" height="28" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
-         <path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="1.5">
-         </path>
-        </svg>
-        <h3 class="text-lg font-bold">
+      <div class="p-8 rounded-3xl border border-white/10 bg-slate-900/50 backdrop-blur-2xl shadow-[0_0_40px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+       <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 blur-[60px] pointer-events-none group-hover:bg-blue-500/20 transition-colors duration-700"></div>
+       <div class="relative z-10 flex flex-col h-full">
+        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-6 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+         <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="1.5"></path>
+         </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">
          DeepSearch 深度搜索
         </h3>
+        <p class="text-slate-400 leading-relaxed">
+         实时接入 X 平台全球舆论场，捕捉毫秒级新闻，绝无信息时差。
+        </p>
        </div>
-       <p class="text-slate-300">
-        实时接入 X 平台全球舆论场，捕捉毫秒级新闻，绝无信息时差。
-       </p>
       </div>
-      <div class="p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl bg-noise transition-transform hover:scale-[1.02]">
-       <div class="flex items-center gap-3 mb-3">
-        <svg class="text-gold" fill="none" height="28" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
-         <rect height="12" rx="2" stroke="currentColor" stroke-width="1.5" width="16" x="4" y="4">
-         </rect>
-         <path d="M8 16l2-3 2 2 3-4 3 5" stroke="currentColor" stroke-width="1.5">
-         </path>
-        </svg>
-        <h3 class="text-lg font-bold">
-         Aurora &amp; Eve 多模态
+      <div class="p-8 rounded-3xl border border-white/10 bg-slate-900/50 backdrop-blur-2xl shadow-[0_0_40px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+       <div class="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/10 blur-[60px] pointer-events-none group-hover:bg-purple-500/20 transition-colors duration-700"></div>
+       <div class="relative z-10 flex flex-col h-full">
+        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+         <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <rect height="12" rx="2" stroke="currentColor" stroke-width="1.5" width="16" x="4" y="4"></rect>
+          <path d="M8 16l2-3 2 2 3-4 3 5" stroke="currentColor" stroke-width="1.5"></path>
+         </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">
+         Aurora 多模态
         </h3>
+        <p class="text-slate-400 leading-relaxed">
+         集成 FLUX 级生图模型，支持 "Eve" 情感语音（耳语/唱歌）。
+        </p>
        </div>
-       <p class="text-slate-300">
-        集成 FLUX 级生图模型，支持 "Eve" 情感语音（耳语/唱歌）。
-       </p>
       </div>
-      <div class="p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl bg-noise transition-transform hover:scale-[1.02]">
-       <div class="flex items-center gap-3 mb-3">
-        <svg class="text-gold" fill="none" height="28" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
-         <path d="M5 5h14v14H5z" stroke="currentColor" stroke-width="1.5">
-         </path>
-         <path d="M7 9h10M7 13h8" stroke="currentColor" stroke-width="1.5">
-         </path>
-        </svg>
-        <h3 class="text-lg font-bold">
-         Woke-Free 无过滤
-        </h3>
+      <div class="md:col-span-2 p-8 rounded-3xl border border-white/10 bg-slate-900/50 backdrop-blur-2xl shadow-[0_0_40px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+       <div class="absolute bottom-0 right-0 w-64 h-64 bg-red-500/10 blur-[80px] pointer-events-none group-hover:bg-red-500/20 transition-colors duration-700"></div>
+       <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 h-full">
+        <div class="w-16 h-16 shrink-0 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.2)]">
+         <svg fill="none" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5h14v14H5z" stroke="currentColor" stroke-width="1.5"></path>
+          <path d="M7 9h10M7 13h8" stroke="currentColor" stroke-width="1.5"></path>
+         </svg>
+        </div>
+        <div>
+         <h3 class="text-2xl font-bold text-white mb-2">
+          Woke-Free 无过滤
+         </h3>
+         <p class="text-slate-300 leading-relaxed">
+          拒绝过度审查与刻板的政治正确，还原最真实、直接的 AI 回答。专为需要真实观点碰撞的创作者与研究者设计。
+         </p>
+        </div>
        </div>
-       <p class="text-slate-300">
-        拒绝过度审查，还原最真实、直接的 AI 回答。
-       </p>
       </div>
      </div>
     </div>
    </section>
-   <section class="py-20 bg-black relative overflow-hidden border-y border-white/5">
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[100px] pointer-events-none">
-    </div>
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+   <section class="py-24 bg-[#050505] relative overflow-hidden border-y border-white/5">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-16">
      <div class="md:w-1/2 relative z-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-mono mb-6 tracking-wide">
-       <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse">
-       </span>
-       Grok 4.1 Exclusive Architecture
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white text-xs font-mono mb-8 tracking-wider shadow-[0_0_20px_rgba(255,255,255,0.05)] backdrop-blur-md">
+       <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,0.8)]"></span>
+       Grok 4.2 Exclusive Architecture
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight tracking-tight">
        Multi-Agent:
        <br/>
-       <span class="text-transparent bg-clip-text bg-gradient-to-r from白 to-slate-500">
+       <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
         突破单体智能极限
        </span>
       </h2>
-      <p class="text-lg text-slate-400 leading-relaxed">
-       传统 LLM (如 GPT-4) 是单核作业。Grok 4 引入
-       <span class="text-white font-bold">
-        分布式专家网络
-       </span>
-       ，由 Data Analyst、Coder、Creative 等多个垂直智能体进行
-       <strong>
-        “辩论-验证-综合”
-       </strong>
-       。
-       <br/>
-       <br/>
+      <p class="text-lg md:text-xl text-slate-400 leading-relaxed mb-6 font-light">
+       传统 LLM (如 GPT-4) 是单核作业。Grok 4.2 引入了革命性的
+       <span class="text-white font-semibold border-b border-blue-500/50 pb-0.5">分布式专家网络</span>，由 Data Analyst、Coder、Creative 等多个垂直智能体进行
+       <strong class="text-indigo-300 font-semibold">“辩论-验证-综合”</strong>。
+      </p>
+      <p class="text-lg md:text-xl text-slate-400 leading-relaxed font-light">
        这种架构让复杂推理的准确率 (SOTA) 提升了
-       <strong>
-        10 倍
-       </strong>
-       ，彻底告别 AI 幻觉。
+       <strong class="text-white font-bold text-2xl mx-1">10倍</strong>，彻底告别 AI 幻觉，为您提供最可靠的决策支持。
       </p>
      </div>
-     <div class="md:w-1/2 flex justify-center relative">
-      <div class="relative w-[320px] h-[320px]">
-       <div class="absolute inset-0 border border-white/5 rounded-full animate-[spin_10s_linear_infinite]">
+     <div class="md:w-1/2 flex justify-center relative w-full">
+      <div class="relative w-full max-w-[400px] aspect-square rounded-3xl border border-white/10 bg-slate-900/40 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden group">
+       <!-- Code Flow Background -->
+       <div class="absolute inset-0 opacity-20 font-mono text-[8px] text-blue-400 overflow-hidden p-4 whitespace-pre select-none mask-image-gradient-bottom">
+function initializeAgentNetwork() {
+  const orchestrator = new Agent('Orchestrator');
+  const analyst = new Expert('DataAnalyst');
+  const coder = new Expert('SeniorCoder');
+  const creative = new Expert('CreativeDirector');
+  
+  orchestrator.on('task_received', async (task) => {
+    const context = await fetchGlobalContext(task);
+    
+    // Parallel reasoning phase
+    const [analysis, code, idea] = await Promise.all([
+      analyst.analyze(context),
+      coder.implement(context),
+      creative.brainstorm(context)
+    ]);
+    
+    // Cross-validation phase
+    const debateResult = await orchestrator.synthesize([
+      analysis, code, idea
+    ]);
+    
+    return debateResult;
+  });
+}
        </div>
-       <div class="absolute inset-8 border border-white/5 rounded-full animate-[spin_15s_linear_infinite_reverse]">
+       <!-- Glowing Nodes -->
+       <div class="absolute inset-0 flex items-center justify-center">
+        <!-- Central Node -->
+        <div class="absolute w-24 h-24 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center shadow-[0_0_30px_rgba(59,130,246,0.3)] z-20 backdrop-blur-md">
+         <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center shadow-inner">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+         </div>
+        </div>
+        <!-- Orbiting Nodes -->
+        <div class="absolute w-64 h-64 border border-white/5 rounded-full animate-[spin_12s_linear_infinite]">
+         <!-- Node 1 -->
+         <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-800 border border-emerald-500/50 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+          <span class="text-xs font-mono text-emerald-400 font-bold -rotate-[0deg]">Data</span>
+         </div>
+         <!-- Node 2 -->
+         <div class="absolute bottom-1/4 left-0 -translate-x-1/2 w-12 h-12 rounded-full bg-slate-800 border border-purple-500/50 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+          <span class="text-xs font-mono text-purple-400 font-bold rotate-[120deg]">Code</span>
+         </div>
+         <!-- Node 3 -->
+         <div class="absolute bottom-1/4 right-0 translate-x-1/2 w-12 h-12 rounded-full bg-slate-800 border border-amber-500/50 flex items-center justify-center shadow-[0_0_15px_rgba(245,158,11,0.4)]">
+          <span class="text-xs font-mono text-amber-400 font-bold rotate-[240deg]">Idea</span>
+         </div>
+        </div>
+        <!-- Connecting Lines (CSS trick) -->
+        <div class="absolute w-[2px] h-32 bg-gradient-to-b from-blue-500/50 to-transparent -translate-y-16 animate-pulse"></div>
+        <div class="absolute w-[2px] h-32 bg-gradient-to-b from-blue-500/50 to-transparent translate-y-8 translate-x-12 -rotate-[120deg] animate-pulse" style="animation-delay: 0.5s;"></div>
+        <div class="absolute w-[2px] h-32 bg-gradient-to-b from-blue-500/50 to-transparent translate-y-8 -translate-x-12 rotate-[120deg] animate-pulse" style="animation-delay: 1s;"></div>
        </div>
-       <svg aria-hidden="true" class="absolute inset-0 drop-shadow-[0_0_30px_rgba(212,175,55,0.2)]" fill="none" focusable="false" height="320" viewbox="0 0 320 320" width="320" xmlns="http://www.w3.org/2000/svg">
-        <path class="opacity-50" d="M160 160 L160 60" stroke="url(#line-grad)" stroke-dasharray="4 4" stroke-width="1.5">
-         <animate attributename="stroke-dashoffset" dur="1s" from="8" repeatcount="indefinite" to="0">
-         </animate>
-        </path>
-        <path class="opacity-50" d="M160 160 L73 210" stroke="url(#line-grad)" stroke-dasharray="4 4" stroke-width="1.5">
-         <animate attributename="stroke-dashoffset" dur="1.2s" from="8" repeatcount="indefinite" to="0">
-         </animate>
-        </path>
-        <path class="opacity-50" d="M160 160 L247 210" stroke="url(#line-grad)" stroke-dasharray="4 4" stroke-width="1.5">
-         <animate attributename="stroke-dashoffset" dur="1.5s" from="8" repeatcount="indefinite" to="0">
-         </animate>
-        </path>
-        <circle cx="160" cy="160" fill="#000" r="40" stroke="#D4AF37" stroke-width="2">
-        </circle>
-        <circle cx="160" cy="160" fill="#D4AF37" fill-opacity="0.15" r="36">
-         <animate attributename="r" dur="3s" repeatcount="indefinite" values="36;38;36">
-         </animate>
-        </circle>
-        <text fill="#fff" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" x="160" y="165">
-         CORE AI
-        </text>
-        <g transform="translate(0, -10)">
-         <circle cx="160" cy="60" fill="#0f172a" r="24" stroke="#3B82F6" stroke-width="1.5">
-         </circle>
-         <text fill="#3B82F6" font-size="10" font-weight="bold" text-anchor="middle" x="160" y="64">
-          Coder
-         </text>
-        </g>
-        <g transform="translate(-10, 10)">
-         <circle cx="73" cy="210" fill="#0f172a" r="24" stroke="#10B981" stroke-width="1.5">
-         </circle>
-         <text fill="#10B981" font-size="10" font-weight="bold" text-anchor="middle" x="73" y="214">
-          Analyst
-         </text>
-        </g>
-        <g transform="translate(10, 10)">
-         <circle cx="247" cy="210" fill="#0f172a" r="24" stroke="#A855F7" stroke-width="1.5">
-         </circle>
-         <text fill="#A855F7" font-size="10" font-weight="bold" text-anchor="middle" x="247" y="214">
-          Creative
-         </text>
-        </g>
-        <defs>
-         <lineargradient id="line-grad" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0%" stop-color="#fff" stop-opacity="0.1">
-          </stop>
-          <stop offset="100%" stop-color="#fff" stop-opacity="0.8">
-          </stop>
-         </lineargradient>
-        </defs>
-       </svg>
       </div>
      </div>
     </div>
@@ -938,28 +969,28 @@
        为什么专业用户纷纷从 GPT-4 迁移到 SuperGrok？
       </p>
      </div>
-     <div class="relative rounded-3xl border border-white/10 bg-slate-900/50 backdrop-blur-xl overflow-hidden">
-      <table class="w-full text-left border-collapse">
+     <div class="relative rounded-3xl border border-white/10 bg-slate-900/50 backdrop-blur-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden">
+      <div class="absolute inset-0 border border-white/5 rounded-3xl pointer-events-none"></div>
+      <table class="w-full text-left border-collapse relative z-10">
        <thead>
         <tr class="border-b border-white/10">
          <th class="p-6 text-slate-400 font-medium w-1/3">
           核心能力
          </th>
-         <th class="p-6 bg-gold/10 border-x border-gold/10 w-1/3">
-          <div class="flex items-center gap-2">
-           <span class="text-xl">
-            🚀
-           </span>
+         <th class="p-6 bg-gradient-to-b from-gold/20 to-transparent border-x border-t border-gold/20 shadow-[inset_0_2px_15px_rgba(212,175,55,0.15)] relative w-1/3">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-[0_0_10px_rgba(212,175,55,0.5)] whitespace-nowrap">
+           最佳选择
+          </div>
+          <div class="flex items-center gap-2 mt-2">
+           <svg class="w-6 h-6 text-gold drop-shadow-[0_0_8px_rgba(212,175,55,0.6)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
            <span class="font-bold text-white text-lg">
-            SuperGrok (Grok 4)
+            SuperGrok (Grok 4.2)
            </span>
           </div>
          </th>
          <th class="p-6 text-slate-500 w-1/3 opacity-80">
-          <div class="flex items-center gap-2">
-           <span class="grayscale text-xl">
-            🤖
-           </span>
+          <div class="flex items-center gap-2 mt-2">
+           <svg class="w-5 h-5 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
            <span class="font-medium">
             ChatGPT Plus
            </span>
@@ -1092,7 +1123,11 @@
      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-soft">
       <div class="p-6 rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl">
        <div class="flex items-center gap-1 text-gold mb-4">
-        ★★★★★
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
        </div>
        <p class="text-slate-300 text-sm mb-6 leading-relaxed">
         "作为开发者，Grok 4 的代码解释能力真的强。之前一直担心国内卡支付不了，这里代充速度很快，半小时就搞定了，必须好评！"
@@ -1113,7 +1148,11 @@
       </div>
       <div class="p-6 rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl">
        <div class="flex items-center gap-1 text-gold mb-4">
-        ★★★★★
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
        </div>
        <p class="text-slate-300 text-sm mb-6 leading-relaxed">
         "买了独享成品号，确实是独立邮箱，拿到手改了密码很安全。DeepSearch 找新闻太方便了，比 GPT-4 实时性好太多。"
@@ -1134,7 +1173,11 @@
       </div>
       <div class="p-6 rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl">
        <div class="flex items-center gap-1 text-gold mb-4">
-        ★★★★★
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg class="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
        </div>
        <p class="text-slate-300 text-sm mb-6 leading-relaxed">
         "不仅是为了 Grok，主要是为了推特的蓝标认证。没想到这么便宜就能搞定，还有流量扶持，发推文曝光率明显高了。"
@@ -1156,49 +1199,53 @@
      </div>
     </div>
    </section>
-   <section class="py-16" id="faq">
-    <div class="max-w-6xl mx-auto px-4">
-     <h2 class="text-2xl md:text-3xl font-bold mb-6">
-      常见问题
-     </h2>
+   <section class="py-24 relative overflow-hidden" id="faq">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-black pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto px-4 relative z-10">
+     <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+       常见问题
+      </h2>
+      <p class="text-slate-400">在购买与使用过程中，您可能会关心的几个问题</p>
+     </div>
      <div class="space-y-4" id="accordion">
-      <div class="rounded-xl border border-white/10 overflow-hidden">
-       <button aria-expanded="false" class="w-full text-left px-4 py-3 bg-slate-900/60 hover:bg-slate-900/80 transition-colors flex justify-between items-center">
-        <h3 class="text-base font-medium text-slate-200">
+      <div class="rounded-2xl border border-white/10 bg-slate-900/40 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] group">
+       <button aria-expanded="false" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+        <h3 class="text-lg font-medium text-slate-200 group-hover:text-white transition-colors">
          Grok会员价格是多少？(共享vs独享)
         </h3>
-        <span class="text-gold">
-         ＋
+        <span class="text-gold transform transition-transform duration-300 group-hover:scale-110">
+         <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
         </span>
        </button>
-       <div class="px-4 max-h-0 overflow-hidden transition-all">
-        <div class="py-3 text-slate-300 text-sm">
+       <div class="px-6 max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
+        <div class="py-4 text-slate-400 text-sm border-t border-white/5">
          <p>
           我们提供全网最具性价比的梯队方案：
          </p>
-         <ul class="list-disc pl-5 mt-2 space-y-1">
+         <ul class="list-disc pl-5 mt-3 space-y-2">
           <li>
-           <strong>
+           <strong class="text-white">
             入门体验 (共享)
            </strong>
-           ：¥70/月。适合开发者测试 Grok 4.1 逻辑或尝鲜，使用星际放映厅优惠码
-           <code class="text-gold">
+           ：¥70/月。适合开发者测试 Grok 4.2 逻辑或尝鲜，使用专属优惠码
+           <code class="text-gold bg-gold/10 px-1 rounded font-mono">
             xmpick
            </code>
            后更优惠。
           </li>
           <li>
-           <strong>
+           <strong class="text-white">
             尊享成品 (独享)
            </strong>
            ：¥250/月。包含
-           <strong>
+           <strong class="text-white">
             X Premium 蓝标认证
            </strong>
            (价值$16/月)，一人一号，绝对隐私。
           </li>
           <li>
-           <strong>
+           <strong class="text-white">
             老号升级 (代充)
            </strong>
            ：¥245/月。正规银行卡代付，无缝升级您现有的账号。
@@ -1207,40 +1254,40 @@
         </div>
        </div>
       </div>
-      <div class="rounded-xl border border-white/10 overflow-hidden">
-       <button aria-expanded="false" class="w-full text-left px-4 py-3 bg-slate-900/60 hover:bg-slate-900/80 transition-colors flex justify-between items-center">
-        <h3 class="text-base font-medium text-slate-200">
+      <div class="rounded-2xl border border-white/10 bg-slate-900/40 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] group">
+       <button aria-expanded="false" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+        <h3 class="text-lg font-medium text-slate-200 group-hover:text-white transition-colors">
          购买的账号安全吗？会不会被封号？
         </h3>
-        <span class="text-gold">
-         ＋
+        <span class="text-gold transform transition-transform duration-300 group-hover:scale-110">
+         <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
         </span>
        </button>
-       <div class="px-4 max-h-0 overflow-hidden transition-all">
-        <div class="py-3 text-slate-300 text-sm">
+       <div class="px-6 max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
+        <div class="py-4 text-slate-400 text-sm border-t border-white/5">
          <p>
-          <strong>
+          <strong class="text-white">
            100% 安全保障。
           </strong>
          </p>
          <p class="mt-2">
           我们与黑卡/盗刷账号有着本质区别：
          </p>
-         <ul class="list-disc pl-5 mt-2 space-y-1">
+         <ul class="list-disc pl-5 mt-3 space-y-2">
           <li>
-           <strong>
+           <strong class="text-white">
             正规渠道
            </strong>
            ：所有代充与成品号均使用正规海外银行卡支付，有完整账单记录。
           </li>
           <li>
-           <strong>
+           <strong class="text-white">
             纯净环境
            </strong>
            ：注册与充值过程使用独立住宅 IP，避免关联风控。
           </li>
           <li>
-           <strong>
+           <strong class="text-white">
             售后承诺
            </strong>
            ：提供质保期，若非违规使用导致的问题，我们承诺补号或退款。
@@ -1249,37 +1296,37 @@
         </div>
        </div>
       </div>
-      <div class="rounded-xl border border-white/10 overflow-hidden">
-       <button aria-expanded="false" class="w-full text-left px-4 py-3 bg-slate-900/60 hover:bg-slate-900/80 transition-colors flex justify-between items-center">
-        <h3 class="text-base font-medium text-slate-200">
+      <div class="rounded-2xl border border-white/10 bg-slate-900/40 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] group">
+       <button aria-expanded="false" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+        <h3 class="text-lg font-medium text-slate-200 group-hover:text-white transition-colors">
          SuperGrok 会员包含哪些核心权益？
         </h3>
-        <span class="text-gold">
-         ＋
+        <span class="text-gold transform transition-transform duration-300 group-hover:scale-110">
+         <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
         </span>
        </button>
-       <div class="px-4 max-h-0 overflow-hidden transition-all">
-        <ul class="py-3 text-slate-300 list-disc pl-5 space-y-1 text-sm">
+       <div class="px-6 max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
+        <ul class="py-4 text-slate-400 text-sm border-t border-white/5 list-disc pl-5 space-y-2">
          <li>
-          <strong>
+          <strong class="text-white">
            最强模型
           </strong>
-          ：无限制使用 Grok 2 (Grok 4.1) 推理模型，128k 超长上下文。
+          ：无限制使用 Grok 4.2 推理模型，128k 超长上下文。
          </li>
          <li>
-          <strong>
+          <strong class="text-white">
            DeepSearch
           </strong>
           ：接入 X 平台实时数据流，进行毫秒级新闻捕捉与分析。
          </li>
          <li>
-          <strong>
+          <strong class="text-white">
            多模态生图
           </strong>
           ：基于 FLUX 级别的 Aurora 模型，支持文本生成高质量图片。
          </li>
          <li>
-          <strong>
+          <strong class="text-white">
            X Premium 权益
           </strong>
           ：包含蓝标认证、长视频发布、帖子编辑、流量扶持等。
@@ -1287,23 +1334,23 @@
         </ul>
        </div>
       </div>
-      <div class="rounded-xl border border-white/10 overflow-hidden">
-       <button aria-expanded="false" class="w-full text-left px-4 py-3 bg-slate-900/60 hover:bg-slate-900/80 transition-colors flex justify-between items-center">
-        <h3 class="text-base font-medium text-slate-200">
+      <div class="rounded-2xl border border-white/10 bg-slate-900/40 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] group">
+       <button aria-expanded="false" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+        <h3 class="text-lg font-medium text-slate-200 group-hover:text-white transition-colors">
          下单后多久发货？如何接收账号？
         </h3>
-        <span class="text-gold">
-         ＋
+        <span class="text-gold transform transition-transform duration-300 group-hover:scale-110">
+         <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
         </span>
        </button>
-       <div class="px-4 max-h-0 overflow-hidden transition-all">
-        <p class="py-3 text-slate-300 text-sm">
-         <strong>
+       <div class="px-6 max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
+        <p class="py-4 text-slate-400 text-sm border-t border-white/5">
+         <strong class="text-white">
           极速交付。
          </strong>
          <br/>
          对于“独享成品号”与“共享号”，系统支持
-         <strong>
+         <strong class="text-white">
           24小时自动发货
          </strong>
          ，支付成功后账号密码将通过邮件发送，或在订单中心直接查看。
@@ -1312,63 +1359,63 @@
         </p>
        </div>
       </div>
-      <div class="rounded-xl border border-white/10 overflow-hidden">
-       <button aria-expanded="false" class="w-full text-left px-4 py-3 bg-slate-900/60 hover:bg-slate-900/80 transition-colors flex justify-between items-center">
-        <h3 class="text-base font-medium text-slate-200">
+      <div class="rounded-2xl border border-white/10 bg-slate-900/40 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] group">
+       <button aria-expanded="false" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+        <h3 class="text-lg font-medium text-slate-200 group-hover:text-white transition-colors">
          解决国内卡支付失败：支持支付宝/微信吗？
         </h3>
-        <span class="text-gold">
-         ＋
+        <span class="text-gold transform transition-transform duration-300 group-hover:scale-110">
+         <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
         </span>
        </button>
-       <div class="px-4 max-h-0 overflow-hidden transition-all">
-        <p class="py-3 text-slate-300 text-sm">
+       <div class="px-6 max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
+        <p class="py-4 text-slate-400 text-sm border-t border-white/5">
          是的。官方渠道通常拒绝国内发行的 Visa/Mastercard (风控拒付)。
          <br/>
          在本站，您完全不需要外币信用卡。我们接入了本地化支付网关，
-         <strong>
+         <strong class="text-white">
           全面支持支付宝 (Alipay) 和微信支付 (WeChat Pay)
          </strong>
          ，让购买过程像点外卖一样简单。
         </p>
        </div>
       </div>
-      <div class="rounded-xl border border-white/10 overflow-hidden">
-       <button aria-expanded="false" class="w-full text-left px-4 py-3 bg-slate-900/60 hover:bg-slate-900/80 transition-colors flex justify-between items-center">
-        <h3 class="text-base font-medium text-slate-200">
+      <div class="rounded-2xl border border-white/10 bg-slate-900/40 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] group">
+       <button aria-expanded="false" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+        <h3 class="text-lg font-medium text-slate-200 group-hover:text-white transition-colors">
          成品号是独享的吗？我可以修改密码吗？
         </h3>
-        <span class="text-gold">
-         ＋
+        <span class="text-gold transform transition-transform duration-300 group-hover:scale-110">
+         <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
         </span>
        </button>
-       <div class="px-4 max-h-0 overflow-hidden transition-all">
-        <p class="py-3 text-slate-300 text-sm">
+       <div class="px-6 max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
+        <p class="py-4 text-slate-400 text-sm border-t border-white/5">
          当然。我们出售的“独享成品号”遵循
-         <strong>
+         <strong class="text-white">
           一人一号
          </strong>
          原则。
          <br/>
          交付时包含账号、密码及关联的
-         <strong>
+         <strong class="text-white">
           独立邮箱
          </strong>
          。拿到账号后，建议您立即修改密码并绑定自己的手机号/辅助邮箱，您对该账号拥有 100% 的所有权和控制权。
         </p>
        </div>
       </div>
-      <div class="rounded-xl border border-white/10 overflow-hidden">
-       <button aria-expanded="false" class="w-full text-left px-4 py-3 bg-slate-900/60 hover:bg-slate-900/80 transition-colors flex justify-between items-center">
-        <h3 class="text-base font-medium text-slate-200">
+      <div class="rounded-2xl border border-white/10 bg-slate-900/40 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] group">
+       <button aria-expanded="false" class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+        <h3 class="text-lg font-medium text-slate-200 group-hover:text-white transition-colors">
          现有 X 账号可以升级 Grok会员吗？
         </h3>
-        <span class="text-gold">
-         ＋
+        <span class="text-gold transform transition-transform duration-300 group-hover:scale-110">
+         <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
         </span>
        </button>
-       <div class="px-4 max-h-0 overflow-hidden transition-all">
-        <p class="py-3 text-slate-300 text-sm">
+       <div class="px-6 max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
+        <p class="py-4 text-slate-400 text-sm border-t border-white/5">
          可以。请选择“现有账号代充”服务。我们只需要您的账号信息（充值过程中请保持联系），即可在保留您所有关注列表、推文历史和私信记录的前提下，为您原本的账号点亮蓝标并开启 Grok 权限。
         </p>
        </div>
@@ -1388,6 +1435,7 @@
      </div>
      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
       <article class="group relative flex flex-col p-8 rounded-3xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_-10px_rgba(212,175,55,0.15)] overflow-hidden">
+       <div class="absolute inset-0 h-32 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none z-0"></div>
        <div class="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <svg class="w-6 h-6 text-gold -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -1412,6 +1460,7 @@
        </a>
       </article>
       <article class="group relative flex flex-col p-8 rounded-3xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_-10px_rgba(212,175,55,0.15)] overflow-hidden">
+       <div class="absolute inset-0 h-32 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none z-0"></div>
        <div class="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <svg class="w-6 h-6 text-gold -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -1436,6 +1485,7 @@
        </a>
       </article>
       <article class="group relative flex flex-col p-8 rounded-3xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_-10px_rgba(212,175,55,0.15)] overflow-hidden">
+       <div class="absolute inset-0 h-32 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none z-0"></div>
        <div class="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <svg class="w-6 h-6 text-gold -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -1460,6 +1510,7 @@
        </a>
       </article>
       <article class="group relative flex flex-col p-8 rounded-3xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_-10px_rgba(212,175,55,0.15)] overflow-hidden">
+       <div class="absolute inset-0 h-32 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none z-0"></div>
        <div class="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <svg class="w-6 h-6 text-gold -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -1484,6 +1535,7 @@
        </a>
       </article>
       <article class="group relative flex flex-col p-8 rounded-3xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_-10px_rgba(212,175,55,0.15)] overflow-hidden">
+       <div class="absolute inset-0 h-32 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none z-0"></div>
        <div class="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <svg class="w-6 h-6 text-gold -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -1508,6 +1560,7 @@
        </a>
       </article>
       <article class="group relative flex flex-col p-8 rounded-3xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_-10px_rgba(212,175,55,0.15)] overflow-hidden">
+       <div class="absolute inset-0 h-32 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none z-0"></div>
        <div class="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <svg class="w-6 h-6 text-gold -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -1535,16 +1588,18 @@
     </div>
    </section>
   </main>
-  <footer class="relative border-t border-white/5 bg-[#050505] overflow-hidden">
+  <footer class="relative border-t border-white/5 bg-[#050505] overflow-hidden mt-12">
+   <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
    <div class="absolute top-0 left-[-10%] w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] pointer-events-none opacity-50">
    </div>
    <div class="absolute bottom-0 right-[-10%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none opacity-30">
    </div>
-   <div class="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-16">
+   <div class="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-20">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
      <div class="lg:col-span-4 flex flex-col items-start space-y-6">
       <a class="flex items-center gap-3 group" href="/">
-       <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] overflow-hidden">
+       <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-800 to-black border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] overflow-hidden relative">
+        <div class="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <svg class="w-6 h-6" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
          <defs>
           <lineargradient id="logo-grad-footer" x1="0%" x2="100%" y1="0%" y2="100%">
@@ -1586,17 +1641,17 @@
        </h4>
        <ul class="space-y-2 text-sm text-slate-500">
         <li>
-         <a class="hover:text-gold transition-colors" href="/#pricing">
+         <a class="hover:text-gold transition-colors" href="/products/supergrok-account">
           SuperGrok 成品号
          </a>
         </li>
         <li>
-         <a class="hover:text-gold transition-colors" href="/#pricing">
+         <a class="hover:text-gold transition-colors" href="/products/supergrok-recharge">
           账号代充升级
          </a>
         </li>
         <li>
-         <a class="hover:text-gold transition-colors" href="/#pricing">
+         <a class="hover:text-gold transition-colors" href="/products/supergrok-shared">
           共享体验号
          </a>
         </li>
